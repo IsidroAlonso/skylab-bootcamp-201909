@@ -21,3 +21,8 @@ var result = 0;
 forEach(numbers, function(number) { result += number; });
 
 console.log(result);
+
+console.log('testing message errors');
+
+forEach(numbers);
+forEach(1);

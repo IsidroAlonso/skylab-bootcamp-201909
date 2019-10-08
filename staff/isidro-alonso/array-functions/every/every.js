@@ -1,8 +1,19 @@
 /**
+ * @param {}
  * 
+ * @returns {}
+ * 
+ * @throws {}
  */
-function every(array, evaluation) {
-    array = [];
-    for (var i = 1; i < array.length; i++)
-        evaluation(array[i]) ? true : false;
+function every(array, expression) {
+    // if() {
+    //     throw 'Error';
+    // }
+    try {
+        for (var i = 0; i < array.length; i++)
+            return expression(array[i]) === array[i]? true : false;
+    }
+    catch(err) {
+        console.log(err.message);
+    }
 }
