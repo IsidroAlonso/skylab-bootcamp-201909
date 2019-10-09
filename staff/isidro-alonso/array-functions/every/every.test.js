@@ -19,14 +19,52 @@ describe('every', function () {
 
     )
 
-    it('maaaaaaaaaaaaaaaaaaaaaaaaaaal', function () {
+    it('has to confirm if there\'s a string on the array', function () {
 
         var numbers = [1, 2, 3, 4];
         var result = 0;
 
-        var condition = function (element) {if (element = 'b') false; }; // no se que estoy haciendo
+        var condition = function (element) { result = element === 'b'; } // no se que estoy haciendo
 
         find(numbers, condition);
+
+        expect(result).toBe(false);
+
+    }, function (error) {
+
+        expect(error).toBe(undefined);
+
+    }
+
+    )
+
+    it('has to confirm if there\'s a number on the array', function () {
+
+        var strings = ['a', 'b', 'c'];
+        var result = 0;
+
+        var condition = function (element) { result = element === 2; };
+
+        find(strings, condition);
+
+        expect(result).toBe(false);
+
+    }, function (error) {
+
+        expect(error).toBe(undefined);
+
+    }
+
+    )
+
+    it('has to confirm if there\'s a string on the array', function () {
+
+        var strings = ['a', 'b', 'c'];
+        var result = 0;
+
+        var condition = function (element) { result = element === 'c'; };
+
+        find(strings, condition);
 
         expect(result).toBe(true);
 
@@ -38,42 +76,23 @@ describe('every', function () {
 
     )
 
-    it('has to confirm that there are not strings on the array', function () {
+    it('has to confirm that at least there\'s one number greater than one of the array', function () {
 
-        var numbers = ['a', 'b', 'c'];
+        var strings = [1, 2, 3];
         var result = 0;
-
-        var condition = function (element) { result = element > 2; };
-
-        find(numbers, condition);
-
-        expect(result).toBe(true);
-
+    
+        var condition = function (element) { result = element > 3; };
+    
+        find(strings, condition);
+    
+        expect(result).toBe(false);
+    
     }, function (error) {
-
+    
         expect(error).toBe(undefined);
-
+    
     }
-
-    )
-
-    it('maaaaaaaaaaaaaaaaaal', function () {
-
-        var numbers = ['a', 'b', 'c'];
-        var result = 0;
-
-        var condition = function (element) { result = element = 'c'; };
-
-        find(numbers, condition);
-
-        expect(result).toBe(true);
-
-    }, function (error) {
-
-        expect(error).toBe(undefined);
-
-    }
-
+    
     )
 
 });
