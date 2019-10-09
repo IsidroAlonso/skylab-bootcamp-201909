@@ -6,7 +6,7 @@ describe('slice', function () {
 
         var result = slice(array, 1, 4);
 
-        expect(result).toBe([2, 3]);
+        expect(result).toBe(['b', 'c']);
 
     })
 

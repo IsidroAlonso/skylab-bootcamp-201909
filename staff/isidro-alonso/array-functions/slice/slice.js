@@ -17,7 +17,7 @@ function slice(array, posinit, posfinal) {
     for(i = 0; i < array.length; i++)
     if (posfinal <= array.length[i])
         posfinal = array[i];
-        posfinal;
+        posfinal--;
 
     return [posinit, posfinal]
 
