@@ -9,11 +9,16 @@
 function slice(array, posinit, posfinal) {
     if (!(array instanceof Array)) throw array + ' is not a function';
     
-    var posinit = 0;
-
     for(i = 0; i < array.length; i++)
-        posinit[i] = array[i];
-        posfinal[i] = array[i];
-        return ;
+    if (posinit <= array.length[i])
+        posinit = array[i];
+        posinit++;
+    
+    for(i = 0; i < array.length; i++)
+    if (posfinal <= array.length[i])
+        posfinal = array[i];
+        posfinal;
+
+    return [posinit, posfinal]
 
 }

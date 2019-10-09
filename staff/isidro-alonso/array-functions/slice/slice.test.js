@@ -1,20 +1,13 @@
 describe('slice', function () {
 
-    it('', function (){
+    it('it should extract the array in the order that you select', function (){
 
-        var array = [1, 2, 3, 4];
-        function expression () {};
+        var array = ['a', 'b', 'c', 'd'];
 
-        var result = slice(array, 1, 3);
+        var result = slice(array, 1, 4);
 
         expect(result).toBe([2, 3]);
 
-    }, function (error) {
-
-        expect(error).toBe(undefined);
-
-    }
-    
-    )
+    })
 
 });

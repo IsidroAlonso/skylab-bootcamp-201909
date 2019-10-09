@@ -11,32 +11,20 @@ describe('every', function () {
 
         expect(result).toBe(true);
 
-    }, function (error) {
-
-        expect(error).toBe(undefined);
-
-    }
-
-    )
+    });
 
     it('has to confirm if there\'s a string on the array', function () {
 
         var numbers = [1, 2, 3, 4];
         var result = 0;
 
-        var condition = function (element) { result = element === 'b'; } // no se que estoy haciendo
+        var condition = function (element) { result = element === 'b'; }
 
         find(numbers, condition);
 
-        expect(result).toBe(false);
+        expect(result).toThrow(TypeError,'target is not a function');
 
-    }, function (error) {
-
-        expect(error).toBe(undefined);
-
-    }
-
-    )
+    });
 
     it('has to confirm if there\'s a number on the array', function () {
 
@@ -47,15 +35,9 @@ describe('every', function () {
 
         find(strings, condition);
 
-        expect(result).toBe(false);
+        expect(result).toThrow(TypeError,'target is not a function');
 
-    }, function (error) {
-
-        expect(error).toBe(undefined);
-
-    }
-
-    )
+    });
 
     it('has to confirm if there\'s a string on the array', function () {
 
@@ -68,13 +50,7 @@ describe('every', function () {
 
         expect(result).toBe(true);
 
-    }, function (error) {
-
-        expect(error).toBe(undefined);
-
-    }
-
-    )
+    });
 
     it('has to confirm that at least there\'s one number greater than one of the array', function () {
 
@@ -87,12 +63,6 @@ describe('every', function () {
     
         expect(result).toBe(false);
     
-    }, function (error) {
-    
-        expect(error).toBe(undefined);
-    
-    }
-    
-    )
+    });
 
 });
