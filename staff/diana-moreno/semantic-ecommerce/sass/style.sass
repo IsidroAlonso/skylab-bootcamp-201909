@@ -1,0 +1,33 @@
+/*glcart__titleobal*/
+body
+  font-size: 1.3rem
+
+li
+  list-style: none
+
+a
+  text-decoration: none
+
+img
+  width: 100%
+
+
+.wrapper
+  height: 100%
+  display: grid
+  grid-template-areas: "header header" "main main" "footer footer"
+  grid-template-rows: 5rem, 1fr, 4rem
+  grid-template-columns: 4fr 1fr
+
+.main
+  grid-area: main
+  grid-template-rows: repeat(3, 1fr)
+  grid-template-columns: repeat(2, 1fr)
+
+@import header
+@import footer
+@import product
+@import section
+@import orders
+@import cart
+

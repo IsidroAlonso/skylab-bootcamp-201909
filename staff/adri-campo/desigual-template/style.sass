@@ -1,0 +1,270 @@
+@import configadri
+@import panel
+   
+*
+    box-sizing: border-box
+    
+body
+    margin: 0
+    font-family: 'Quicksand', sans-serif
+   
+.header
+    position: sticky
+    top: 0
+    background-color: $header-bg-mobile
+
+.nav
+    display: grid
+    grid-template-columns: 50px 2fr 1fr
+    grid-template-rows: repeat(2, 35px)
+    grid-template-areas: "menu iconlist title" "search search search"
+    padding: .75rem 
+
+    &__menu
+        grid-area: menu   
+        @extend %flex-center
+        
+    &__iconlist
+        grid-area: iconlist
+        display: flex
+        align-items: center
+        margin: -45px
+    &__icons 
+        display: flex
+        justify-content: flex-start
+        list-style: none
+    &__li
+        margin: 7px
+         
+    &__title 
+        @extend %flex-center 
+        grid-area: title
+        
+
+        .titlelogo
+            width: 100%
+            max-width: 123px
+            
+    &__search
+        @extend %flex-center 
+        grid-area: search
+        
+        .searchspace
+            border: none
+            border-bottom: .15rem solid black
+            background-color: white
+            height: 20px
+        .searchicon
+            border: none
+            border-bottom: .15rem solid black
+            cursor: pointer
+            background-color: white
+            height: 20px
+
+.main
+    @extend %flex-center 
+    overflow: auto
+    flex-direction: column
+    font-weight: bold
+    background-image: url("https://www.desigual.com/dw/image/v2/BCVV_PRD/on/demandware.static/-/Library-Sites-DsglSharedLibrary/default/dw1873f07d/campaigns/2019/AW2019/W40/MSS/MSS_home_hero1_01_desktop_all.jpg?sfrm=jpg&sw=1920") 
+    
+    .discount
+        color: $main-discount
+        
+        &__title
+           background: $main-discount-title
+
+        &__text
+            background: $main-discount-text
+            font-size: .75rem
+        
+        &__clothes
+            list-style: none 
+            font-weight: normal
+            text-decoration: underline
+            font-size: 14px
+            padding: 0
+
+            .clothes__li
+                margin: .5rem 0
+                text-align: center
+
+                &::before
+                    content: "\2022"
+                    color: #2c2926
+                    font-weight: bold
+                    display: inline-block
+                    width: 1em
+                    margin-left: -1em
+                
+.footer
+    overflow: auto
+    background-color-mobile: $footer-bg-mobile
+
+    .customerservice
+        display: grid
+        grid-template-columns: 1fr
+        grid-template-rows: 1fr 1fr 1fr
+        grid-template-areas: "menu" "menu" "menu" 
+
+        &__menu
+            grid-area: menu  
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            background: $footer-customerservice-menu
+            
+            .menu__items
+                list-style: none
+                color: $footer-customerservice-menu-items
+
+                .link
+                    color: $footer-customerservice-menu-link
+                    padding: .5rem
+                    font-size: 12px
+
+                .fas
+                    margin-right: 15px
+
+    .registration
+        @extend %flex-center 
+        flex-direction: column 
+        font-weight: bold
+        border-bottom: silver solid 1px
+    
+        &__title
+            font-size: 20px
+        
+        &__subtitle
+            font-size: 10px
+            margin-top: -9px
+
+        &__button
+            border: solid black 1.5px
+            border-radius: .3rem
+            background: $footer-registration-button-background
+            color: $footer-registration-button-color
+            padding: .5rem
+            margin-bottom: 20px
+   
+    .guide
+        display: grid
+        grid-template-columns: 1fr
+        grid-template-rows: 1fr 1fr 1fr 1fr
+        grid-template-areas: "menu" "menu" "menu" "menu"
+        font-size: 12px
+        margin-bottom: 10px 
+        
+        &__menu
+            grid-area: menu  
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            align-items: left
+            background: $footer-guide-menu-background
+            margin-top: 5px
+            
+        &__options
+                list-style: none
+                color: $footer-guide-options-color
+            
+                .text
+                    color: $footer-guide-options-text
+                    padding: .5rem
+                    font-size: 10px
+                
+                .fas
+                    margin-right: 9px
+
+                .a
+                    display: flex
+
+                .a > p
+                    margin: 0 
+        
+    .place
+        display: flex
+        flex-direction: column
+        border-bottom: silver solid 1px
+        font-size: 13px
+        font-weight: bold
+
+        &__menu1
+            display: flex
+            flex-direction: row
+            margin-bottom: 10px
+
+        &__country 
+            display: flex
+            justify-content: flex-start
+            margin-left: 40px
+            margin-right: 10px
+            
+        &__selectcountry
+            margin-left: 8px
+
+        &__menu2
+            display: flex
+            flex-direction: row
+            margin-bottom: 10px
+
+        &__language
+            display: flex
+            justify-content: flex-start
+            margin-left: 40px
+            margin-right: 10px 
+     
+        &__selectlanguage
+                margin-left: 8px
+
+    .bottomsite
+        display: grid
+        grid-template-columns: 2fr 1fr
+        grid-template-rows: 1fr 1fr
+        grid-template-areas: "socialmedia endtitle" ". copyright"
+        padding: .75rem
+
+        &__socialmedia
+            grid-area: socialmedia  
+            display: flex
+            justify-content: flex-start
+            align-items: left
+            background: white
+            margin-top: 5px
+            list-style: none
+            padding: 0
+
+            .b
+                margin: 0 .5rem 0 .5rem
+                
+        &__endtitle
+            grid-area: endtitle
+            display: flex
+            justify-content: flex-start
+            align-items: center
+
+            .endtitlelogo
+                width: 100%
+                max-width: 123px
+
+        &__copyright
+            grid-area: copyright
+
+.link-white
+    text-decoration: none
+    color: $link-white
+
+
+@media only screen and (min-width:768px)
+    .header
+        background-color: $header-bg-tablet
+    .footer
+        .bottomsite
+            background-color: $footer-bg-tablet
+
+@media only screen and (min-width:1024px)
+    .header
+        background-color: $header-bg-desktop
+    .footer
+        .bottomsite
+            background-color: $footer-bg-desktop

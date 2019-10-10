@@ -1,0 +1,23 @@
+.header
+    &__nav-list 
+        list-style: none
+        margin: 0
+        background: $dark-blue
+        +flexbox()
+
+
+    &__nav-item-link 
+        text-decoration: none
+        display: block
+        padding: 1em
+        color: white
+        background-color: $dark-blue
+
+
+    &__nav-item-link:hover 
+        background: $dark-grey
+
+@media only screen and (max-width: 420px) 
+
+    .header__nav-list
+        display: block

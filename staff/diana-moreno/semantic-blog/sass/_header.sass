@@ -1,0 +1,25 @@
+@import config
+
+.header
+  grid-area: header
+
+  &__nav-list
+    display: flex
+    justify-content: flex-start
+
+    &>li
+      margin-right: 2rem
+
+  &__title
+    display: flex
+    justify-content: center
+    border-bottom: $border
+    padding: 3rem
+    font-size: 2rem
+    margin: 0
+
+  &__nav-list--categories
+    justify-content: center
+    padding: 1.5rem
+    border-bottom: $border
+    margin: 0

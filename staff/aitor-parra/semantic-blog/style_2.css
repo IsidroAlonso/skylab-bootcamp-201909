@@ -1,0 +1,143 @@
+.grid {
+    display: grid;
+    gap: .2rem;
+    padding:20px;
+    border: 1.5px solid black;
+    min-height: 100vh;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 10% 10% 20% 55% 5%;
+    grid-template-areas: 
+    "header header"
+    "nav nav"
+    "section section"
+    "article aside"
+    "footer footer";
+}
+
+.grid_article_group {
+    display: grid;
+    gap: .2rem;
+    padding: 20px;
+    border: 1.5px solid black;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: 
+    "article_1 article_2"
+    "article_3 article_4";
+
+}
+
+.grid_article_post {
+    display: grid;
+    gap: .2rem;
+    padding:20px;
+    border: 1.5px solid black;
+    min-height: 100vh;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 10% 10% 20% 55% 5%;
+    grid-template-areas: 
+    "header header"
+    "nav nav"
+    "article aside"
+    "article aside"
+    "footer footer";
+
+}
+
+.grid_article_post1 {
+    gap: .2rem;
+    padding: 20px;
+    height: 100vw;
+    border: 1.5px solid black;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+    "article_post";
+}
+
+.article_post {
+    grid-area: article_post
+}
+
+
+.article_1 {
+    grid-area: article_1
+}
+.article_2 {
+    grid-area: article_2
+}
+.article_3 {
+    grid-area: article_3
+}
+.article_4 {
+    grid-area: article_4
+}
+
+
+
+
+.header {
+    grid-area: header;
+    border: 1.5px solid rgb(37, 37, 41);
+    max-height: 8rem;
+    text-align: center;
+    background-color: rgb(165, 242, 165);
+}
+
+.nav/* _ul */ {
+    grid-area: nav;
+    border: 1.5px solid rgb(37, 37, 41);
+    max-height: 8rem;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+
+.section {
+    grid-area: section;
+    border: 1.5px solid rgb(37, 37, 41);
+    padding:20px;
+    background-color: rgb(165, 242, 165);
+    display: flex;
+    justify-content: space-around;
+}
+.section_p {
+    max-width: 400px;
+}
+
+.section_figure {
+    float: right;
+    padding:20px;
+    
+}
+
+.article {
+    grid-area: article;
+    border: 1.5px solid rgb(37, 37, 41);
+    padding:20px;  
+  
+}
+
+.aside {
+    grid-area: aside;
+    border: 1.5px solid rgb(37, 37, 41);
+    padding:20px;
+    height: 100vw;
+    background-color: rgb(165, 242, 165);
+
+    /* height: 10rem;  */
+}
+
+.footer {
+    grid-area: footer;
+    border: 1.5px solid rgb(37, 37, 41);
+    padding:20px;
+    
+}
+
+.nav-ul {
+    justify-content: center;
+    color: green
+    
+}

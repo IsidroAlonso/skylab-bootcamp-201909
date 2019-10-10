@@ -1,0 +1,62 @@
+body {
+    margin: 0 auto;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.products  {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: 40%;
+    text-align: center;
+}
+
+.product img {
+    width: 50%;
+}
+.product p {
+    text-align: justify;
+}
+.product-detail {
+    display: flex;
+}
+
+.results {
+    display: flex;
+}
+
+.banner-header {
+    background-image: url(https://dummyimage.com/1200x300/63cce6/fff.jpg);
+    height: 30vh;
+}
+
+.banner-header h1 {
+    text-align: center;
+    position: relative;
+    top: 50%;
+}
+.banner-products {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 97%;
+    height: auto;
+    
+}
+.banner-products img {
+    height: 90%;
+}
+
+
+.products-elected {
+    width: 97%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+}

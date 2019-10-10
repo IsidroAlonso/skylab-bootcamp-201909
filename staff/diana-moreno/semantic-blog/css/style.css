@@ -1,0 +1,129 @@
+/*global*/
+body {
+  font-size: 1.3rem;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+figure {
+  margin: 0;
+}
+
+.wrapper {
+  height: 100%;
+  display: grid;
+  grid-template-areas: "header header" "main aside" "footer footer";
+  grid-template-rows: 5rem, 1fr, 4rem;
+  grid-template-columns: 4fr 1fr;
+}
+
+.main {
+  grid-area: main;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.header {
+  grid-area: header;
+}
+.header__nav-list {
+  display: flex;
+  justify-content: flex-start;
+}
+.header__nav-list > li {
+  margin-right: 2rem;
+}
+.header__title {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid lightgrey;
+  padding: 3rem;
+  font-size: 2rem;
+  margin: 0;
+}
+.header__nav-list--categories {
+  justify-content: center;
+  padding: 1.5rem;
+  border-bottom: 2px solid lightgrey;
+  margin: 0;
+}
+
+.article {
+  margin: 0 auto;
+  padding: 3rem;
+  margin: 0 5rem;
+}
+.article > p {
+  line-height: 2rem;
+}
+.article__independ-text {
+  clear: both;
+}
+.article__img {
+  float: right;
+  padding: 0 3rem 3rem 3rem;
+}
+.article__img > img {
+  width: 100%;
+}
+.article__video {
+  display: flex;
+  margin: 0 auto;
+  height: 25rem;
+  width: 42rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.lattest {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 3rem;
+  flex-wrap: wrap;
+  line-height: 2rem;
+}
+.lattest__introduction {
+  padding: 0 5rem;
+}
+.lattest__post {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 300px;
+  padding: 3rem;
+  flex-wrap: wrap;
+}
+
+.aside {
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-left: 2px solid lightgrey;
+  padding: 2rem;
+  align-items: center;
+}
+.aside__prev-article {
+  padding: 0;
+  text-align: center;
+}
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem 0 2rem 0;
+  border-top: 2px solid lightgrey;
+}
+.footer__social-media {
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,56 @@
+.main-content
+    +flexbox()
+
+
+    &__section 
+        width: 75%
+        margin: 0 auto
+        +flexbox()
+
+
+    &__section-title 
+        width: 100%
+
+
+    &__aside 
+        width: 25%
+
+
+    &__navigation 
+        width: 100%
+
+
+    &__navigation-list 
+        +flexbox()
+
+
+    &__navigation-item 
+        cursor: pointer
+        padding: 1rem
+        border: 0.2rem solid $light-grey
+        width: 3rem
+        height: 3rem
+        border-radius: 1.5rem
+        margin: 0.4rem
+        background-color: $grey
+
+
+    &__navigation-item:hover 
+        border: 0.2rem solid $grey
+        background-color: $light-grey
+
+
+    &__navigation-link 
+        color: $white
+        position: relative
+        top: -3px
+
+    &__aside-link 
+        color: $dark-blue
+
+@media only screen and (max-width: 768px) 
+    .main-content__section
+        width: 100%  
+
+    .main-content__aside 
+        width: 100%        

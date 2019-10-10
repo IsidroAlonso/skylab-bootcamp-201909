@@ -1,0 +1,284 @@
+@charset "UTF-8";
+.footer .registration, .main, .nav__search, .nav__title, .nav__menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: skyblue;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: 50px 2fr 1fr;
+  grid-template-rows: repeat(2, 35px);
+  grid-template-areas: "menu iconlist title" "search search search";
+  padding: 0.75rem;
+}
+.nav__menu {
+  grid-area: menu;
+}
+.nav__iconlist {
+  grid-area: iconlist;
+  display: flex;
+  align-items: center;
+  margin: -45px;
+}
+.nav__icons {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+}
+.nav__li {
+  margin: 7px;
+}
+.nav__title {
+  grid-area: title;
+}
+.nav__title .titlelogo {
+  width: 100%;
+  max-width: 123px;
+}
+.nav__search {
+  grid-area: search;
+}
+.nav__search .searchspace {
+  border: none;
+  border-bottom: 0.15rem solid black;
+  background-color: white;
+  height: 20px;
+}
+.nav__search .searchicon {
+  border: none;
+  border-bottom: 0.15rem solid black;
+  cursor: pointer;
+  background-color: white;
+  height: 20px;
+}
+
+.main {
+  overflow: auto;
+  flex-direction: column;
+  font-weight: bold;
+  background-image: url("https://www.desigual.com/dw/image/v2/BCVV_PRD/on/demandware.static/-/Library-Sites-DsglSharedLibrary/default/dw1873f07d/campaigns/2019/AW2019/W40/MSS/MSS_home_hero1_01_desktop_all.jpg?sfrm=jpg&sw=1920");
+}
+.main .discount {
+  color: white;
+}
+.main .discount__title {
+  background: red;
+}
+.main .discount__text {
+  background: red;
+  font-size: 0.75rem;
+}
+.main .discount__clothes {
+  list-style: none;
+  font-weight: normal;
+  text-decoration: underline;
+  font-size: 14px;
+  padding: 0;
+}
+.main .discount__clothes .clothes__li {
+  margin: 0.5rem 0;
+  text-align: center;
+}
+.main .discount__clothes .clothes__li::before {
+  content: "•";
+  color: #2c2926;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.footer {
+  overflow: auto;
+  background-color-mobile: skyblue;
+}
+.footer .customerservice {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "menu" "menu" "menu";
+}
+.footer .customerservice__menu {
+  grid-area: menu;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #2e2c2c11;
+}
+.footer .customerservice__menu .menu__items {
+  list-style: none;
+  color: #2C2926;
+}
+.footer .customerservice__menu .menu__items .link {
+  color: #2C2926;
+  padding: 0.5rem;
+  font-size: 12px;
+}
+.footer .customerservice__menu .menu__items .fas {
+  margin-right: 15px;
+}
+.footer .registration {
+  flex-direction: column;
+  font-weight: bold;
+  border-bottom: silver solid 1px;
+}
+.footer .registration__title {
+  font-size: 20px;
+}
+.footer .registration__subtitle {
+  font-size: 10px;
+  margin-top: -9px;
+}
+.footer .registration__button {
+  border: solid black 1.5px;
+  border-radius: 0.3rem;
+  background: white;
+  color: black;
+  padding: 0.5rem;
+  margin-bottom: 20px;
+}
+.footer .guide {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "menu" "menu" "menu" "menu";
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.footer .guide__menu {
+  grid-area: menu;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: left;
+  background: white;
+  margin-top: 5px;
+}
+.footer .guide__options {
+  list-style: none;
+  color: #2C2926;
+}
+.footer .guide__options .text {
+  color: #2C2926;
+  padding: 0.5rem;
+  font-size: 10px;
+}
+.footer .guide__options .fas {
+  margin-right: 9px;
+}
+.footer .guide__options .a {
+  display: flex;
+}
+.footer .guide__options .a > p {
+  margin: 0;
+}
+.footer .place {
+  display: flex;
+  flex-direction: column;
+  border-bottom: silver solid 1px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.footer .place__menu1 {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.footer .place__country {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 40px;
+  margin-right: 10px;
+}
+.footer .place__selectcountry {
+  margin-left: 8px;
+}
+.footer .place__menu2 {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.footer .place__language {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 40px;
+  margin-right: 10px;
+}
+.footer .place__selectlanguage {
+  margin-left: 8px;
+}
+.footer .bottomsite {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "socialmedia endtitle" ". copyright";
+  padding: 0.75rem;
+}
+.footer .bottomsite__socialmedia {
+  grid-area: socialmedia;
+  display: flex;
+  justify-content: flex-start;
+  align-items: left;
+  background: white;
+  margin-top: 5px;
+  list-style: none;
+  padding: 0;
+}
+.footer .bottomsite__socialmedia .b {
+  margin: 0 0.5rem 0 0.5rem;
+}
+.footer .bottomsite__endtitle {
+  grid-area: endtitle;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footer .bottomsite__endtitle .endtitlelogo {
+  width: 100%;
+  max-width: 123px;
+}
+.footer .bottomsite__copyright {
+  grid-area: copyright;
+}
+
+.link-white {
+  text-decoration: none;
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    background-color: pink;
+  }
+
+  .footer .bottomsite {
+    background-color: pink;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .header {
+    background-color: rgba(255, 0, 0, 0.75);
+  }
+
+  .footer .bottomsite {
+    background-color: rgba(255, 0, 0, 0.75);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

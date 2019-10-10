@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amazing shop</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script></script>
+  </head>
+  <body>
+    <header class='header'>
+      <nav>
+        <ul class='header__nav-list'>
+          <li><a href="">Home</a></li>
+          <li><a href="">Products</a></li>
+          <li><a href="">About us</a></li>
+          <li><a href="">Contact</a></li>
+          <li class='header__cart'><a href="">Cart</a></li>
+        </ul>
+      </nav>
+      <h1 class='header__title'>This is the shop's title</h1>
+      <div class='header__searcher'>
+        <nav>
+          <ul class='header__nav-list header__nav-list--categories'>
+            <li><a href="">Category 1</a></li>
+            <li><a href="">Category 2</a></li>
+            <li><a href="">Category 3</a></li>
+            <li><a href="">Category 4</a></li>
+          </ul>
+        </nav>
+        <form class='header__form' action="">
+          <input id='search' type="text" value='Search...'>
+        </form>
+      </div>
+    </header>
+    <main class='main'>
+      <section class='product'>
+        <div class='product__images'>
+          <figure>
+            <img src="https://fakeimg.pl/460x570/">
+            <figcaption>Some information about</figcaption>
+          </figure>
+          <figure>
+            <img src="https://fakeimg.pl/460x570/">
+            <figcaption>Some information about</figcaption>
+          </figure>
+        </div>
+        <div class='product__information'>
+          <h2>Article's name</h2>
+          <p>Price 80$</p>
+          <h4>Description</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a metus quis orci condimentum fringilla. Fusce vitae fermentum tortor. Phasellus auctor justo tellus, vel sagittis turpis hendrerit vitae. </p>
+          <form action="">
+            <label for="">Color</label>
+            <select class='product__select' name="color">
+              <option value="red">Red</option>
+              <option value="green">Green</option>
+              <option value="black">Black</option>
+              <option value="white">White</option>
+            </select>
+            <label for="Size">Size</label>
+            <select class='product__select' name="size">
+              <option value="xs">XS</option>
+              <option value="s">S</option>
+              <option value="m">M</option>
+              <option value="l">L</option>
+              <option value="xl">XL</option>
+            </select>
+            <input class='product__button' type="submit" value="Add to Cart">
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class='footer'>
+      <div>
+        <p>© 2019 My Shop. All Rights Reserved</p>
+        <a href="mailto:someemail@gmail.com">someemail@gmail.com</a>
+      </div>
+      <div class='footer__social-media'>
+        <p>Follow us in</p>
+        <a href="">Facebook</a>
+        <a href="">Instagram</a>
+      </div>
+      <div>
+        <p>Get help</p>
+        <ul class='footer__help-list'>
+          <li><a href="">Help</a></li>
+          <li><a href="">Shipping and Delivery</a></li>
+          <li><a href="">Returns</a></li>
+          <li><a href="">Contact us</a></li>
+        </ul>
+      </div>
+      <div>
+        <p>Thanks for your visit,</p>
+        <p>see you soon!</p>
+      </div>
+    </footer>
+  </body>
+</html>

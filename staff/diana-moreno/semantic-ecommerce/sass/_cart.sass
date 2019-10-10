@@ -1,0 +1,27 @@
+ @import button
+
+.cart
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+  &__title
+    padding: 3rem
+
+  &__product
+    display: flex
+    width: 36%
+    justify-content: space-between
+    align-items: center
+
+  &__price
+    border: $border
+    padding: 1rem
+    margin-top: 2rem
+
+  &__button
+    @extend %button
+    padding: 1.5rem
+    margin: 2rem
+
