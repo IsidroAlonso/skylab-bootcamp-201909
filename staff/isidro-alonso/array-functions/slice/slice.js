@@ -7,18 +7,20 @@
  */
 
 function slice(array, posinit, posfinal) {
-    if (!(array instanceof Array)) throw array + ' is not a function';
-    
-    for(i = 0; i < array.length; i++)
-    if (posinit <= array.length[i])
-        posinit = array[i];
-        posinit++;
-    
-    for(i = 0; i < array.length; i++)
-    if (posfinal <= array.length[i])
-        posfinal = array[i];
-        posfinal--;
+    if (!(array instanceof Array)) throw new TypeError(array + ' is not an array');
 
-    return [posinit, posfinal]
+    var result = [];
+
+    posinit = posinit || 0;
+    posinit = posinit < 0? array.length + posinit : posinit;
+    posfinal = posfinal || array.length;
+    posfinal = posfinal < 0? array.length + posfinal : posfinal;
+    
+    for(i = posinit; i < posfinal; i++)
+        result[i - posinit] = array[i];
+
+    // result.length = posinit - posfinal;
+
+    return result;
 
 }
