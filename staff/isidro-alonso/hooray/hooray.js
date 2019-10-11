@@ -28,8 +28,53 @@ Hooray.prototype.forEach = function(expression) {
  * @returns {number} The new lenth of the hooray.
  */
 Hooray.prototype.push = function() { 
+
 	for (var i = 0; i < arguments.length; i++)
 		this[this.length++] = arguments[i];
 
 	return this.length;
 };
+
+/**
+ * Extract the last element of an array
+ * 
+ * @param 
+ * 
+ */
+
+Hooray.prototype.pop = function() {
+
+	var result = this[this.length-1];
+	this.length--;
+
+	return result;
+
+}
+
+/**
+ * 
+ * 
+ */
+
+Hooray.prototype.map = function (expression) {
+	// if (typeof expression !== 'function') throw TypeError(expression + ' is not a function');
+
+	newArray = [];
+
+	for (var i= 0; i < this.length; i++)
+		newArray[i] = expression(this[i]);
+
+	return newArray;
+
+}
+
+Hooray.prototype.concat = function () {
+
+	newArray = [];
+
+	for (var i = 0; i < arguments.length; i++)
+		this[this.length++] = arguments[i];
+
+	return newArray;
+
+}
