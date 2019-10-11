@@ -6,9 +6,12 @@ describe('pop', function () {
 
         var result = pop(numbers);
 
+        var expected = [10, 20];
+
         expect(result).toBe(30);
 
-        // expect(numbers).toBe([10, 20]);
+        for (var i = 0; i < expected.length; i++)
+            expect(numbers[i]).toBe(expected[i]);
 
     })
 
@@ -18,9 +21,12 @@ describe('pop', function () {
 
         var result = pop(strings);
 
+        var expected = ['hola', 'que tal'];
+
         expect(result).toBe('adios');
 
-        // expect(numbers).toBe(['hola', 'que tal']);
+        for (var i = 0; i < expected.length; i++)
+            expect(strings[i]).toBe(expected[i]);
 
     })
 
