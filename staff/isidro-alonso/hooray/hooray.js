@@ -57,7 +57,6 @@ Hooray.prototype.pop = function() {
  */
 
 Hooray.prototype.map = function (expression) {
-	// if (typeof expression !== 'function') throw TypeError(expression + ' is not a function');
 
 	newArray = [];
 
@@ -68,13 +67,13 @@ Hooray.prototype.map = function (expression) {
 
 }
 
-Hooray.prototype.concat = function () {
+// Hooray.prototype.concat = function () {
 
-	newArray = [];
+// 	newArray = [];
 
-	for (var i = 0; i < arguments.length; i++)
-		this[this.length++] = arguments[i];
+// 	for (var i = 0; i < arguments.length; i++)
+// 		this[this.length++] = arguments[i];
 
-	return newArray;
+// 	return newArray;
 
-}
+// }
