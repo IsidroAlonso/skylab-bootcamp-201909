@@ -171,3 +171,22 @@ Hooray.prototype.find = function (expression) {
     return undefined;
 	
 }
+
+/**
+ * determines whether an array includes a certain value among its entries, returning true or false as appropriate.
+ * 
+ * @param {...} valueToSearch the value you have to search in each element of the array
+ * 
+ */
+
+Hooray.prototype.includes = function (valueToSearch) {
+
+    for(var i = 0; i < this.length; i++) {
+
+        if (this[i] === valueToSearch){
+            // debugger;
+            return true;
+        }    
+    }
+    return false;
+}
