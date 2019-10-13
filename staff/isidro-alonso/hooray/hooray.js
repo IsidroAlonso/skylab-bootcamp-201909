@@ -36,7 +36,7 @@ Hooray.prototype.push = function() {
 };
 
 /**
- * Extract the last element of an array
+ * Extract the last element of a hoorray
  * 
  * @param 
  * 
@@ -52,7 +52,9 @@ Hooray.prototype.pop = function() {
 }
 
 /**
+ * creates a new array with the results of calling a provided function on every element in the calling hooray.
  * 
+ * @param {Function} expression the changes that you have to apply to each element of the hooray
  * 
  */
 
@@ -67,13 +69,82 @@ Hooray.prototype.map = function (expression) {
 
 }
 
-// Hooray.prototype.concat = function () {
+// new versions
 
-// 	newArray = [];
+/**
+ * merge two or more hoorays. This method does not change the existing hoorays, but instead returns a new hooray
+ * 
+ * @param {Array} argument the arrays to iterate
+ * 
+ * @returns {Array} newArray the new array made with the sum of all the arguments
+ */
 
-// 	for (var i = 0; i < arguments.length; i++)
-// 		this[this.length++] = arguments[i];
+Hooray.prototype.concat = function () {
 
-// 	return newArray;
+    var newHooray = [];
+    
+    for (var i = 0; i < arguments.length; i++)
+        for (var j = 0; j < arguments[i].length; j++)
+            newHooray[newHooray.length] = arguments[i][j]
+        // debugger;
+    
+    return newHooray;
 
-// }
+}
+
+/**
+ * tests whether all elements in the hooray pass the test implemented by the provided function. It returns a Boolean value. 
+ * 
+ * @param {Function} expression the function to check if the conditions of every array met
+ * 
+ */
+
+Hooray.prototype.every = function (expression) {
+
+    for(var i = 0; i < this.length; i++)
+        var review = expression(this[i]);
+        // debugger;
+        return review;
+        
+}
+
+/**
+ * fills (modifies) all the elements of an hooray from a start index (default zero) to an end index (default array length) with a static value. It returns the modified array.
+ * 
+ * @param {...number} filledValue value to filled in each element of the hooray
+ * @param {...number} start initial value to fill if it's expressed, if not is undefined
+ * @param {...number} end final value to fill if it's expressed, if not is undefined
+ * 
+ */
+
+Hooray.prototype.fill = function (filledValue, start, end) {
+
+	var newHooray = [];
+	
+	   for (var i = 0; i < this.length; i++) {
+
+        if (i >= start && i < end) {
+			
+            for (var j = start; j < end; j++) { /// NO FUNCIONA TE COJE UN VALOR VACIO AL PRINCIPIO
+				var newNewHorray = filledValue;
+			}
+			newNewHorray = newHooray[i];
+		}
+        
+        if (i >= start && end === undefined) {
+			var bla;
+			for (var j = start; j < arguments.length; j++) { /// NO FUNCIONA TE COJE UN VALOR VACIO AL PRINCIPIO
+				bla[j] = filledValue;
+			}
+			newHorray[i][bla];
+			debugger;
+		}
+		
+        if (start === undefined && end === undefined) {
+			newHooray[i] = filledValue;
+		}
+		
+    }
+	
+	return newHooray;
+}
