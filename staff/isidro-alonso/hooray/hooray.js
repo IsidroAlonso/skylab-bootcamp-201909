@@ -148,3 +148,26 @@ Hooray.prototype.fill = function (filledValue, start, end) {
 	
 	return newHooray;
 }
+
+/**
+ * returns the value of the first element in the provided hooray that satisfies the provided testing function.
+ * 
+ * @param {Function} expression The expression that puts a condition to finde in each element of the hooray.
+ * 
+ */
+
+Hooray.prototype.find = function (expression) {
+
+    for(var i = 0; i < this.length; i++) {
+
+        if (expression(this[i])) {
+			
+            return this[i];
+
+        } 
+
+    }
+
+    return undefined;
+	
+}
