@@ -6,7 +6,7 @@ describe ('includes', function(){
 
         var result = includes(array, 3);
 
-        expect(result).toBe(true);
+        expect(result).toBeTruthy;
 
     })
 
@@ -16,7 +16,7 @@ describe ('includes', function(){
 
         var result = includes(array, 6);
 
-        expect(result).toBe(false);
+        expect(result).toBeFalsy;
 
     })
 
@@ -26,7 +26,7 @@ describe ('includes', function(){
 
         var result = includes(array, 'a');
 
-        expect(result).toBe(true);
+        expect(result).toBeTruthy;
 
     })
 
@@ -36,7 +36,7 @@ describe ('includes', function(){
 
         var result = includes(array, 'd');
 
-        expect(result).toBe(false);
+        expect(result).toBeFalsy;
 
     })
 
