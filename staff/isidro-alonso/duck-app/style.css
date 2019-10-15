@@ -1,0 +1,26 @@
+.result__title {
+    color: blue;
+    font-size: 5rem;
+}
+
+.result__price {
+    color: red;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+    width: 400px;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.result li {
+    cursor: pointer;
+}
