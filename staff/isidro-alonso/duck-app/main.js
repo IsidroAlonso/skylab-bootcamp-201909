@@ -33,12 +33,13 @@ formulary.addEventListener('submit', function (stahp) {
 
                 var title = document.createElement('title');
                 li.classList.add('result__title');
-                title = duck.title;
+                title = duck.title; //.innerText
 
                 var img = document.createElement('img');
                 img.src = duck.imageUrl;
 
                 var price = document.createElement('price');
+                // li.classList.remove('result__title'); 
                 li.classList.add('result__price');
                 price = duck.price;
 
@@ -84,12 +85,20 @@ function duckitem(id) {
 
             var description = document.createElement('description');
             li.classList.add('result__description');
-            price = duck.description;
+            description = duck.description;
+
+            var buttonback = document.createElement('button');
+            buttonback.classList.add('buttonback');
+            buttonback.innerText = 'Back';
+            buttonback.addEventListener('click', function(){ detail.innerHTML = ''; });
 
             li.append(title);
             li.append(img);
             li.append(price);
             li.append(description);
+
+            li.append(buttonback);
+
             ul.append(li);
 
         }

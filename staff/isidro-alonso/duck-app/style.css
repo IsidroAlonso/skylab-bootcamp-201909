@@ -1,26 +1,73 @@
+body {
+    margin: 0px;
+}
+
+header {
+    background-color: yellow;
+    width: 100%;
+    position: fixed;
+    font-family: cursive;
+    text-align: center;
+    margin: 0px;
+}
+
+/* form {
+    width: 400px;
+} */
+
 .result__title {
     color: blue;
-    font-size: 5rem;
+    font-size: 1.5rem;
 }
 
 .result__price {
     color: red;
     font-size: 1rem;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.result__description {
+    color: green;
+    font-size: 0.8rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 img {
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
+    border: solid 1px;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    margin-top: 0px;
 }
 
 li {
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    display: block;
+    margin: 10px;
+    width: 30%;
+    min-width: 400px;
+    border: solid 1px;
+    text-align: center;
 }
 
 .result li {
     cursor: pointer;
+}
+
+.detail li {
+    width: 30%;
+}
+
+.button {
+    display: block;
+    margin: auto;
 }
