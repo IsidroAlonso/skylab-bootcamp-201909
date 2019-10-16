@@ -4,29 +4,53 @@ body {
 
 header {
     background-color: yellow;
-    width: 100%;
+    width: 360px;
+    height: 70px;
     position: fixed;
+    display: flex;
+    align-items: baseline;
     font-family: cursive;
     text-align: center;
     margin: 0px;
+    padding: 5px;
 }
 
-/* form {
-    width: 400px;
-} */
+.headerback {
+    background-color: yellow;
+    width: 100%;
+    height: 70px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
 
-.result__title {
+form {
+    width: 400px;
+    margin-left: 10px;
+}
+
+.view {
+    border: 0.3rem solid orange;
+    border-radius: 1rem;
+    border-style: dotted;
+    background-color: yellow;
+    width: 100vw;
+    height: 100%;
+    padding: 3vw;
+    text-align: center;
+  }
+  
+.results__title {
     color: blue;
     font-size: 1.5rem;
 }
 
-.result__price {
+.results__price {
     color: red;
     font-size: 1rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.result__description {
+.detail__description {
     color: green;
     font-size: 0.8rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -49,7 +73,7 @@ ul {
     margin-top: 0px;
 }
 
-li {
+.link {
     list-style: none;
     display: block;
     margin: 10px;
@@ -59,15 +83,23 @@ li {
     text-align: center;
 }
 
-.result li {
+.results {
     cursor: pointer;
 }
 
-.detail li {
+.detail {
     width: 30%;
 }
 
 .button {
     display: block;
     margin: auto;
+}
+
+.show {
+    display: block;
+}
+  
+.hide {
+    display: none;
 }

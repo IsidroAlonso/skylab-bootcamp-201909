@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Duckgle</title>
-    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/toys-games/128/2-512.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/toys-games/128/2-512.png"
+        type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,19 +15,26 @@
 
     <header>
         <h1>Duckgle</h1>
-        <form method="get" class="formulary">
-            <input type="text" name="query" class="searchbar" placeholder="Duck Search">
-            <button class="searchbutton">Search</button>
+        <form method="get" class="search">
+            <input type="text" name="query" class="search__criteria" placeholder="Duck Search">
+            <button class="search__submit">🔍</button>
         </form>
     </header>
 
     <main>
-        <section class="result">
-            
+        <section class="headerback"></section>
+
+        <section class="view results">
+
         </section>
 
-        <section class="detail">
-            
+        <section class="view detail hide">
+            <h2 class="detail__title">Duck X</h2>
+            <img class="detail__image" src="https://fakeimg.pl/500x300/?text=Hello">
+            <p class="detail__description"></p>
+            <a class="detail__store" href="#">Go to store</a>
+            <span class="detail__price">10€</span>
+            <a class="detail__back" href="#">Go back</a>
         </section>
     </main>
 
