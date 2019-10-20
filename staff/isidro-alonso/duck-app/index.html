@@ -5,50 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Duckgle</title>
+    <title>Duckle</title>
+    <link rel="stylesheet" href="style/index.css">
     <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/toys-games/128/2-512.png"
         type="image/x-icon">
-    <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
+    <h1 class="maintitle">Duckle</h1>
 
-    <header>
-        <h1>Duckgle</h1>
-        <form method="get" class="search">
-            <input type="text" name="query" class="search__criteria" placeholder="Duck Search">
+    <section class="view">
+        <form class="access">
+            <p>Please, login to access to our shop!</p>
+            <input class="access__email" type="text" name="query" placeholder="e-mail">
+            <input class="access__password" type="password" name="query" placeholder="password">
+            <button class="access__login">Login</button>
+            <a class="access__link" href="#">Not registered? Sign up now!</a>
+        </form>
+
+        <form class="register hide">
+            <p>Sign up to access to our shop!</p>
+            <input class="register__email" type="text" name="query" placeholder="e-mail">
+            <input class="register__password" type="password" name="query" placeholder="password">
+            <button class="register__sign">Sign up</button>
+            <a class="register__link" href="#">Return to login</a>
+        </form>
+
+        <section class="feedback hide">
+                <p class="feedback__message">Error message</p>
+            </section>
+
+        <form class="search hide">
+            <input class="search__criteria" type="text" name="query" placeholder="criteria">
             <button class="search__submit">🔍</button>
         </form>
-    </header>
 
-    <main>
-        <section class="headerback"></section>
+        <ul class="results hide">
+        </ul>
 
-        <section class="view results">
+    <section class="detail hide">
+        <h2 class="detail__title">Duck X</h2>
+        <img class="detail__image" src="https://fakeimg.pl/500x300/?text=Hello">
+        <p class="detail__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate neque omnis
+            sunt dolor repellat incidunt voluptates odio eos consequatur corrupti. Accusantium porro minima molestias
+            voluptatem dolor nobis! Perspiciatis, vero maiores!</p>
+        <a class="detail__store" target="_blank" href="#">Go to store</a>
+        <span class="detail__price">10€</span>
+        <a class="detail__back" href="#">Go back</a>
+    </section>
+</section>
 
-        </section>
-
-        <section class="view detail hide">
-            <h2 class="detail__title">Duck X</h2>
-            <img class="detail__image" src="https://fakeimg.pl/500x300/?text=Hello">
-            <p class="detail__description"></p>
-            <a class="detail__store" href="#">Go to store</a>
-            <span class="detail__price">10€</span>
-            <a class="detail__back" href="#">Go back</a>
-        </section>
-    </main>
-
-    <script src="scripts/utils/fetch.js"></script>
     <script src="scripts/utils/shuffle.js"></script>
-    <script src="scripts/utils/extend.js"></script>
-    <script src="scripts/logic/search-ducks/index.js"></script>
-    <script src="scripts/logic/retrieve-duck/index.js"></script>
-    <script src="scripts/helpers/call.js"></script>
-    <script src="scripts/components/component.js"></script>
-    <script src="scripts/components/detail.js"></script>
-    <script src="scripts/components/results.js"></script>
-    <script src="scripts/components/result-item.js"></script>
-    <script src="scripts/components/search.js"></script>
+    <script src="scripts/utils/fetch.js"></script>
+    <script src="scripts/utils/call.js"></script>
+    <script src="scripts/logic/register-user/index.js"></script>
+    <script src="scripts/logic/authenticate-user/index.js"></script>
+    <script src="scripts/access.js"></script>
+    <script src="scripts/register.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 
