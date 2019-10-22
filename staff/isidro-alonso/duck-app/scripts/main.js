@@ -31,7 +31,7 @@ function paintResults(ducks) {
         item.addEventListener('click', function (event) {
 
             const id = duck.id;
-            retrieveDuck(id, paintDetail);
+            retrieveDuck(id, paintDetail(duck));
         });
 
         result.append(item);
