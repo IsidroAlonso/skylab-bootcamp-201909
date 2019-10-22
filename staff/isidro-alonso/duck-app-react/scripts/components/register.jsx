@@ -1,9 +1,9 @@
-function Register({userRegister, toAccess}) {
+function Register({ userRegister, toAccess }) {
     return <section className="view">
         <form className="register" onSubmit={e => {
-                e.preventDefault()
-                const { email: {value: email}, password: {value: password} } = e.target
-                userRegister(email, password)
+            e.preventDefault()
+            const { email: { value: email }, password: { value: password } } = e.target
+            userRegister(email, password)
         }}>
             <p>Sign up to access to our shop!</p>
             <input className="register__email" type="text" name="email" placeholder="e-mail" />

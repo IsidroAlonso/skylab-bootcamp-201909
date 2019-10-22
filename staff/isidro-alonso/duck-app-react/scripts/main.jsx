@@ -18,9 +18,13 @@ function handleRegister(email, password) {
     debugger
 }
 
+function handleSearch(search) {
+    debugger
+}
+
 ReactDOM.render(<>
     <h1 className="maintitle">Duckle</h1>
     <Access toRegister={handleGoToRegister} userAccess={handleAccess} />
     <Register toAccess={handleGoToAccess} userRegister={handleRegister} />
-    <Search />
+    <Search doTheSearch={handleSearch} />
 </>, document.getElementById('root'))
