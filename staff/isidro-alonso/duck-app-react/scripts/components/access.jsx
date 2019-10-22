@@ -1,4 +1,4 @@
-function Access({userAccess, toRegister}) {
+function Access({userAccess, toRegister, error}) {
     return <section className="view">
         <form className="access" onSubmit={e => {
             e.preventDefault()
@@ -14,5 +14,6 @@ function Access({userAccess, toRegister}) {
                 toRegister()
             }}>Not registered? Sign up now!</a>
         </form>
+        {error && <Feedback message={error} />}
     </section>
 }

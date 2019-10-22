@@ -1,4 +1,4 @@
-function Register({ userRegister, toAccess }) {
+function Register({ userRegister, toAccess, error }) {
     return <section className="view">
         <form className="register" onSubmit={e => {
             e.preventDefault()
@@ -13,5 +13,7 @@ function Register({ userRegister, toAccess }) {
                 e.preventDefault()
                 toAccess()
             }}>Return to login</a>
-        </form></section>
+        </form>
+        {error && <Feedback message={error} />}
+    </section>
 }

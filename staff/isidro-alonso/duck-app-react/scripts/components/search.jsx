@@ -1,4 +1,4 @@
-function Search({doTheSearch}) {
+function Search({doTheSearch, error}) {
     return <section className="view">
         <form className="search" onSubmit={e => {
             e.preventDefault()
@@ -7,5 +7,7 @@ function Search({doTheSearch}) {
         }}>
             <input className="search__criteria" type="text" name="search" placeholder="criteria" />
             <button className="search__submit">🔍</button>
-        </form></section>
+        </form>
+        {error && <Feedback message={error} />}
+    </section>
 }
