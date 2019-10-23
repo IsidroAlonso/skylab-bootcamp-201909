@@ -1,7 +1,7 @@
-function Results({query, error}) {
+function Results({results, error}) {
     return <section className="view">
         <ul class="results">
-            {query}
+            <li>{results}</li>
         </ul>
         {error && <Feedback message={error} />}
     </section>

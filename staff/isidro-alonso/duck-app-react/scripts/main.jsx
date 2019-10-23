@@ -46,15 +46,15 @@ class App extends React.Component {
     }
 
     handleSearch(query) {
-        try {
-            searchDucks(query, (error, result) => {
-                if (error) this.setState({ error: error.message })
-                else this.setState({ view: result })
-            })
-        } 
-        catch (error) {
-            this.setState({ error: error.message })
-        }
+        // try {
+        //     searchDucks(query, (error, results) => {
+        //         if (error) this.setState({ error: error.message })
+        //         else this.setState({ error: undefined, results })
+        //     })
+        // } 
+        // catch (error) {
+        //     this.setState({ error: error.message })
+        // }
     }
 
     handleGoToStore() {
@@ -66,13 +66,12 @@ class App extends React.Component {
     }
 
     render() {
-        const {state: {view, error}, handleGoToAccess, handleGoToRegister, handleAccess, handleRegister, handleSearch, handleGoToStore, handleGoBackToResults} = this
+        const {state: {view, error, results}, handleGoToAccess, handleGoToRegister, handleAccess, handleRegister, handleSearch, handleGoToStore, handleGoBackToResults} = this
 
         return<>
             {view === 'access' && <Access toRegister={handleGoToRegister} userAccess={handleAccess} error={error} />}
             {view === 'register' && <Register toAccess={handleGoToAccess} userRegister={handleRegister} error={error} />}
-            {view === 'search' && <Search doTheSearch={handleSearch} result={result} error={error} />}
-            {view === 'detail' && <Detail goToStore={handleGoToStore} goBackToResults={handleGoBackToResults} error={error} />}
+            {view === 'search' && <Search doTheSearch={handleSearch} error={error} />}
         </>
     }
 }
