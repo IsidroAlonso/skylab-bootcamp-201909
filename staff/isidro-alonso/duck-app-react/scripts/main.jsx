@@ -1,4 +1,6 @@
-class App extends React.Component {
+const { Component } = React
+
+class App extends Component {
     constructor () {
         super()
 
@@ -33,9 +35,9 @@ class App extends React.Component {
         }
     }
 
-    handleRegister = (email, password) => {
+    handleRegister = (name, email, password) => {
         try {
-            registerUser(email, password, (error) => {
+            registerUser(name, email, password, (error) => {
                 if (error) this.setState({ error: error.message })
                 else this.setState({ error: undefined, view: 'search' })
             })
@@ -57,17 +59,29 @@ class App extends React.Component {
         }
     }
 
+    handleDetail = (id) => {
+        try {
+            retrieveDuck(id, (error, duck) => {
+                if (error) this.setState({ error: error.message })
+                else this.setState({ view: 'detail', duck })
+            })
+        } catch (error) {
+            this.setState({ error: error.message })
+        }
+    }
+
     handleGoBackToResults = () => {
-        console.log(item.id);
+        this.setState({ view: 'search' });
     }
 
     render() {
-        const {state: {view, error, ducks}, handleGoToAccess, handleGoToRegister, handleAccess, handleRegister, handleSearch, handleGoBackToResults} = this
+        const {state: {view, error, ducks, duck}, handleGoToAccess, handleGoToRegister, handleAccess, handleRegister, handleSearch, handleDetail, handleGoBackToResults} = this
 
         return<>
             {view === 'access' && <Access toRegister={handleGoToRegister} userAccess={handleAccess} error={error} />}
             {view === 'register' && <Register toAccess={handleGoToAccess} userRegister={handleRegister} error={error} />}
-            {view === 'search' && <Search doTheSearch={handleSearch} results={ducks} error={error} resultsRender={results => <Results items={results} itemRender={item => <ResultItem item={item} key={item.id} onClick={handleGoBackToResults} />} />}/>}
+            {view === 'search' && <Search doTheSearch={handleSearch} results={ducks} error={error} resultsRender={results => <Results items={results} itemRender={item => <ResultItem item={item} key={item.id} onClick={handleDetail} />} />} />}
+            {view === 'detail' && <Detail item={duck} goBackToResults={handleGoBackToResults} />}
         </>
     }
 }
