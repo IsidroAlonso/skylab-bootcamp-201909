@@ -4,28 +4,28 @@ class App extends React.Component {
 
         this.state = { view: 'access', error: undefined }
         
-        this.handleGoToAccess = this.handleGoToAccess.bind(this)
-        this.handleGoToRegister = this.handleGoToRegister.bind(this)
-        this.handleAccess = this.handleAccess.bind(this)
-        this.handleRegister = this.handleRegister.bind(this)
-        this.handleSearch = this.handleSearch.bind(this)
-        this.handleGoToStore = this.handleGoToStore.bind(this)
-        this.handleGoBackToResults = this.handleGoBackToResults.bind(this)
+        // this.handleGoToAccess = this.handleGoToAccess.bind(this)
+        // this.handleGoToRegister = this.handleGoToRegister.bind(this)
+        // this.handleAccess = this.handleAccess.bind(this)
+        // this.handleRegister = this.handleRegister.bind(this)
+        // this.handleSearch = this.handleSearch.bind(this)
+        // this.handleGoToStore = this.handleGoToStore.bind(this)
+        // this.handleGoBackToResults = this.handleGoBackToResults.bind(this)
     }
 
-    handleGoToAccess () {
+    handleGoToAccess = () => {
         this.setState({ view: 'access' })
     }
 
-    handleGoToRegister () {
+    handleGoToRegister = () => {
         this.setState({ view: 'register' })
     }
 
-    handleAccess(email, password) {
+    handleAccess = (email, password) => {
         try {
             authenticateUser(email, password, (error, data) => {
                 if (error) this.setState({ error: error.message })
-                else this.setState({ view: 'search', data })
+                else this.setState({ error: undefined, view: 'search', data })
             })
         } 
         catch (error) {
@@ -33,11 +33,11 @@ class App extends React.Component {
         }
     }
 
-    handleRegister(email, password) {
+    handleRegister = (email, password) => {
         try {
             registerUser(email, password, (error) => {
                 if (error) this.setState({ error: error.message })
-                else this.setState({ view: 'search' })
+                else this.setState({ error: undefined, view: 'search' })
             })
         } 
         catch (error) {
@@ -45,33 +45,29 @@ class App extends React.Component {
         }
     }
 
-    handleSearch(query) {
-        // try {
-        //     searchDucks(query, (error, results) => {
-        //         if (error) this.setState({ error: error.message })
-        //         else this.setState({ error: undefined, results })
-        //     })
-        // } 
-        // catch (error) {
-        //     this.setState({ error: error.message })
-        // }
+    handleSearch = (query) => {
+        try {
+            searchDucks(query, (error, ducks) => {
+                if (error) this.setState({ error: error.message })
+                else this.setState({ error: undefined, ducks })
+            })
+        } 
+        catch (error) {
+            this.setState({ error: error.message })
+        }
     }
 
-    handleGoToStore() {
-        //
-    }
-
-    handleGoBackToResults() {
-        this.setState({ view: 'results' })
+    handleGoBackToResults = () => {
+        console.log(item.id);
     }
 
     render() {
-        const {state: {view, error, results}, handleGoToAccess, handleGoToRegister, handleAccess, handleRegister, handleSearch, handleGoToStore, handleGoBackToResults} = this
+        const {state: {view, error, ducks}, handleGoToAccess, handleGoToRegister, handleAccess, handleRegister, handleSearch, handleGoBackToResults} = this
 
         return<>
             {view === 'access' && <Access toRegister={handleGoToRegister} userAccess={handleAccess} error={error} />}
             {view === 'register' && <Register toAccess={handleGoToAccess} userRegister={handleRegister} error={error} />}
-            {view === 'search' && <Search doTheSearch={handleSearch} error={error} />}
+            {view === 'search' && <Search doTheSearch={handleSearch} results={ducks} error={error} resultsRender={results => <Results items={results} itemRender={item => <ResultItem item={item} key={item.id} onClick={handleGoBackToResults} />} />}/>}
         </>
     }
 }

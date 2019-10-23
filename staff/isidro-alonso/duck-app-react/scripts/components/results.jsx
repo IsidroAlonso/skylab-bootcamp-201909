@@ -1,8 +1,5 @@
-function Results({results, error}) {
-    return <section className="view">
-        <ul class="results">
-            <li>{results}</li>
-        </ul>
-        {error && <Feedback message={error} />}
-    </section>
+function Results({ items, itemRender }) {
+    return <ul className="results">
+        {items.map(item => itemRender(item))}
+    </ul>
 }
