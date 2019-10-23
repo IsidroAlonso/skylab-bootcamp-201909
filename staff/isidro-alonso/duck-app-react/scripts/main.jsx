@@ -9,45 +9,70 @@ class App extends React.Component {
         this.handleAccess = this.handleAccess.bind(this)
         this.handleRegister = this.handleRegister.bind(this)
         this.handleSearch = this.handleSearch.bind(this)
+        this.handleGoToStore = this.handleGoToStore.bind(this)
+        this.handleGoBackToResults = this.handleGoBackToResults.bind(this)
     }
 
     handleGoToAccess () {
-        this.setState({ view: 'access', error: undefined })
+        this.setState({ view: 'access' })
     }
 
     handleGoToRegister () {
-        this.setState({ view: 'register', error: undefined })
+        this.setState({ view: 'register' })
     }
 
     handleAccess(email, password) {
-        authenticateUser(email, password, () => {
-            this.setState({ error: error.message })//({ view: 'search' })
-        })
+        try {
+            authenticateUser(email, password, (error, data) => {
+                if (error) this.setState({ error: error.message })
+                else this.setState({ view: 'search', data })
+            })
+        } 
+        catch (error) {
+            this.setState({ error: error.message })
+        }
     }
 
     handleRegister(email, password) {
-        // try {
-            registerUser(email, password, () => {
-                // if (error) Error.setState({ error: error.message })
-                // else 
-                this.setState({ view: 'search', error: undefined })
+        try {
+            registerUser(email, password, (error) => {
+                if (error) this.setState({ error: error.message })
+                else this.setState({ view: 'search' })
             })
-        // } catch (error) {
-        //     this.setState({ error: error.message })
-        // }
+        } 
+        catch (error) {
+            this.setState({ error: error.message })
+        }
     }
 
-    handleSearch(search) {
-        debugger
+    handleSearch(query) {
+        try {
+            searchDucks(query, (error, result) => {
+                if (error) this.setState({ error: error.message })
+                else this.setState({ view: result })
+            })
+        } 
+        catch (error) {
+            this.setState({ error: error.message })
+        }
+    }
+
+    handleGoToStore() {
+        //
+    }
+
+    handleGoBackToResults() {
+        this.setState({ view: 'results' })
     }
 
     render() {
-        const {state: {view, error}, handleGoToAccess, handleGoToRegister, handleAccess, handleRegister, handleSearch} = this
+        const {state: {view, error}, handleGoToAccess, handleGoToRegister, handleAccess, handleRegister, handleSearch, handleGoToStore, handleGoBackToResults} = this
 
         return<>
             {view === 'access' && <Access toRegister={handleGoToRegister} userAccess={handleAccess} error={error} />}
             {view === 'register' && <Register toAccess={handleGoToAccess} userRegister={handleRegister} error={error} />}
-            {view === 'search' && <Search doTheSearch={handleSearch} error={error} />}
+            {view === 'search' && <Search doTheSearch={handleSearch} result={result} error={error} />}
+            {view === 'detail' && <Detail goToStore={handleGoToStore} goBackToResults={handleGoBackToResults} error={error} />}
         </>
     }
 }
