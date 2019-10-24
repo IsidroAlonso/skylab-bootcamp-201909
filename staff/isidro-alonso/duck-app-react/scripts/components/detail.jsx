@@ -1,5 +1,5 @@
 function Detail ({ item: { title, imageUrl, description, price, link }, goBackToResults}) {
-    return <section className="detail">
+    return <section className="view detail">
         <h2 className="detail__title">{title}</h2>
         <img className="detail__image" src={imageUrl} />
         <p className="detail__description">{description}</p>
