@@ -1,3 +1,7 @@
+const { id, token } = sessionStorage
+
+const { query } = location
+
 class App extends React.Component {
     constructor() {
         super()
@@ -25,6 +29,10 @@ class App extends React.Component {
             } catch (error) {
                 this.setState({ error: error.message })
             }
+
+        const { state: { query } } = this
+
+        query && this.handleSearch(query)
     }
 
     handleGoToAccess = () => {
@@ -37,7 +45,7 @@ class App extends React.Component {
 
     handleAccess = (email, password) => {
         try {
-            authenticateUser(email, password, (error, {id, token} ) => {
+            authenticateUser(email, password, (error, { id, token }) => {
                 if (error) this.setState({ error: error.message })
                 else
                     try {
@@ -49,7 +57,7 @@ class App extends React.Component {
                             if (error) this.setState({ error: error.message })
                             else this.setState({ error: undefined, view: 'search', user: name })
                         })
-                    } 
+                    }
                     catch (error) {
                         this.setState({ error: error.message })
                     }
@@ -72,11 +80,15 @@ class App extends React.Component {
         }
     }
 
-    handleSearch = (query) => {
+    handleSearch = (id, token, query) => {
         try {
-            searchDucks(query, (error, ducks) => {
+            searchDucks(id, token, query, (error, ducks) => {
                 if (error) this.setState({ error: error.message })
-                else this.setState({ error: undefined, ducks })
+                else {
+                    location.query = query
+
+                    this.setState({ error: undefined, ducks })
+                }
             })
         }
         catch (error) {
@@ -100,22 +112,51 @@ class App extends React.Component {
     }
 
     handleLogout = () => {
+        sessionStorage.clear()
         this.setState({ view: 'access', error: undefined, ducks: undefined, duck: undefined, user: undefined });
     }
 
-    handleFav = (id) => {
-        console.log('❤')
-        // toggleFavDuck()
+    handleFav = (duckId) => {    //('❤')
+
+        const { id, token } = sessionStorage
+
+        try {
+            toggleFavDuck(id, token, duckId, error => {
+                if (error) this.setState({ error: error.message })
+                else {
+                    try {
+                        searchDucks(id, token, query, (error, ducks) => {
+                            if (error) this.setState({ error: error.message })
+                            else {
+                                location.query = query
+            
+                                this.setState({ error: undefined, ducks })
+                            }
+                        })
+                    }
+                    catch (error) {
+                        this.setState({ error: error.message })
+                    }
+                }
+            })
+
+
+        } catch (error) {
+            this.setState({ error: error.message })
+        }
     }
 
     render() {
-        const { state: { view, error, ducks, duck, user }, handleGoToAccess, handleGoToRegister, handleAccess, handleRegister, handleSearch, handleDetail, handleFav, handleGoBackToResults, handleLogout } = this
+        const { state: { view, error, ducks, duck, user, query }, handleGoToAccess, handleGoToRegister, handleAccess, handleRegister, handleSearch, handleDetail, handleFav, handleGoBackToResults, handleLogout } = this
 
         return <>
             {view === 'access' && <Access toRegister={handleGoToRegister} userAccess={handleAccess} error={error} />}
             {view === 'register' && <Register toAccess={handleGoToAccess} userRegister={handleRegister} error={error} />}
             {view === 'search' && <Intro user={user} exitWeb={handleLogout} />}
-            {view === 'search' && <Search doTheSearch={handleSearch} results={ducks} error={error} resultsRender={results => <Results items={results} itemRender={item => <ResultItem item={item} key={item.id} onClick={handleDetail} onFav={handleFav} />} />} />}
+            {view === 'search' && <>
+                <Search doTheSearch={handleSearch} results={ducks} error={error} resultsRender={results => <Results items={results} itemRender={item => <ResultItem item={item} key={item.id} onClick={handleDetail} onFav={handleFav} />} />} user={user} query={query} />
+                {error && <Feedback message={error} />}
+            </>}
             {view === 'detail' && <Detail item={duck} goBackToResults={handleGoBackToResults} />}
         </>
     }
