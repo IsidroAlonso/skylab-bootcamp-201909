@@ -3,7 +3,7 @@ function Search({doTheSearch, results, error, resultsRender}) {
         <form className="search" onSubmit={e => {
             e.preventDefault()
             const query = e.target.query.value
-            doTheSearch(query)
+            doTheSearch(id, token, query)
         }}>
             <input className="search__criteria" type="text" name="query" placeholder="criteria" />
             <button className="search__submit">🔍</button>

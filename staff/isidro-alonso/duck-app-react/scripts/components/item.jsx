@@ -1,4 +1,4 @@
-function ResultItem({ item: { id, title, image, price }, onClick, onFav }) {
+function ResultItem({ item: { id, title, image, price, isFav }, onClick, onFav }) {
     return <li className="results__item">
         <a className="item" href="" onClick={e => {
             e.preventDefault()
@@ -11,7 +11,7 @@ function ResultItem({ item: { id, title, image, price }, onClick, onFav }) {
                 e.preventDefault()
                 e.stopPropagation()
                 onFav(id)
-            }}>💔</span>
+            }}>{isFav? '❤' : '💔'}</span>
         </a>
     </li>
 }

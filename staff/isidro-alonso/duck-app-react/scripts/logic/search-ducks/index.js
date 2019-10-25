@@ -14,10 +14,14 @@ function searchDucks(id, token, query, callback) {
         if (result.error)
             callback(new Error(result.error))
         else {
+            // const { data: { favs = [] } } = result
+
             result.map(duck => { // normalize image url to image
                 duck.image = duck.imageUrl
 
                 delete duck.imageUrl
+
+                // duck.isFav = favs.includes(duck.id)
             })
 
             callback(undefined, result)
