@@ -1,4 +1,4 @@
-function Detail ({ item: { title, imageUrl, description, price, link, onFav }, goBackToResults}) {
+function Detail ({ item: { title, imageUrl, description, price, link, onFav }, goBackToResults, isFav}) {
     return <section className="view detail">
         <h2 className="detail__title">{title}</h2>
         <img className="detail__image" src={imageUrl} />

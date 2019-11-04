@@ -5,9 +5,9 @@ function searchDucks(id, token, query, callback) {
     if (typeof callback !== 'function') throw new TypeError(callback + ' is not a function');
 
     //Favs de un user
-    call('GET',token, 'https://skylabcoders.herokuapp.com/api/user/'+id, undefined, function(result){
-        const {data:{favs}} = result 
-    });
+    // call('GET',token, 'https://skylabcoders.herokuapp.com/api/user/'+id, undefined, function(result){
+    //     const {data:{favs}} = result 
+    // });
 
     //Busca los patos según la barra de búsqueda
     call('GET', undefined, query ? 'https://duckling-api.herokuapp.com/api/search?q=' + query : 'https://duckling-api.herokuapp.com/api/search', undefined, function (result) {
