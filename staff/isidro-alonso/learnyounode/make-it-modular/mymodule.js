@@ -1,17 +1,15 @@
-const folder = process.argv[2]
-const extension = '.' + process.argv[3]
+const fs = require('fs')
+const path = require('path')
 
-module.exports = () => {
+module.exports = (folder, extension, callback) => {
     fs.readdir(folder, (error, list) => {
         if (error) {
-            console.log(error)
+            return callback(error)
         } else {
-            list.forEach((file) => {
-                if (path.extname(file) === extension) {
-                    console.log(file)
-                }
+            list = list.filter((file) => {
+                return path.extname(file) === '.' + extension
             })
+            callback(null, list)
         }
-    callback(null, data)
     })
 }
