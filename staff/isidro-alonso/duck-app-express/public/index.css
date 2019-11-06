@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: silver;
+}
+
+.view {
+  border: 0.3rem solid orange;
+  border-radius: 1rem;
+  border-style: dotted;
+  background-color: yellow;
+  width: 100vw;
+  height: 100%;
+  padding: 3vw;
+  text-align: center;
+}
+
+.landing {
+  background-color: deeppink;
+  border: 0.3rem solid darkviolet;
+  border-radius: 1rem;
+  border-style: dotted;
+  text-decoration: none;
+  padding: 0.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.landing__title {
+  color: darkviolet;
+  font-size: 2rem;
+  margin: 0.5rem auto 0.5rem auto;
+}
+.landing__options {
+  color: darkviolet;
+  font-size: 1.2rem;
+  margin: 0.5rem auto 0.5rem auto;
+}
+
+.register {
+  background-color: yellowgreen;
+  border: 0.3rem solid green;
+  border-radius: 1rem;
+  border-style: dotted;
+  text-decoration: none;
+  padding: 0.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.register__title {
+  color: green;
+  font-size: 2rem;
+  margin: 0.5rem auto 0.5rem auto;
+}
+.register__field {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.register__submit {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+/*# sourceMappingURL=index.css.map */
