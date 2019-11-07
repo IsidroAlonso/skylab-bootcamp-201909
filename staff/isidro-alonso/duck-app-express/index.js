@@ -6,6 +6,8 @@ const Login = require('./components/login')
 const querystring = require('querystring')
 const registerUser = require('./logic/register-user')
 const authenticateUser = require('./logic/authenticate-user')
+const retrieveUser = require('./logic/retrieve-user')
+const Search = require('./components/search')
 
 const { argv: [, , port = 8080] } = process // process.argv[2] = 8080
 
@@ -18,7 +20,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/register', (req, res) => {
-    res.send(View({ body: Register({ landing: '/' }) }))
+    res.send(View({ body: Register({ landing: '/', path: '/register' }) }))
 })
 
 app.post('/register', (req, res) => {
@@ -32,7 +34,8 @@ app.post('/register', (req, res) => {
         try {
             registerUser(name, surname, email, password, error => {
                 if (error) res.send('error chungo!')
-                else res.send('depotamare')
+
+                res.redirect('/login')
             })
         } catch(error) {
             // TODO handling
@@ -41,7 +44,7 @@ app.post('/register', (req, res) => {
 }) 
 
 app.get('/login', (req, res) => {
-    res.send(View({ body: Login({ landing: '/' }) }))
+    res.send(View({ body: Login({ landing: '/', path: '/login' }) }))
 })
 
 app.post('/login', (req, res) => {
@@ -53,14 +56,31 @@ app.post('/login', (req, res) => {
         const { email, password } = querystring.parse(content)
 
         try {
-            authenticateUser(email, password, error => { 
+            authenticateUser(email, password, (error, credentials) => { 
                 if (error) res.send('error chungo!')
-                else res.send('depotamare')
+                try {
+                    const { id, token } = credentials // destructuring
+                    retrieveUser(id, token, (error, user) => {
+                        if (error) res.send('error chungo!')
+
+                        else {
+                            const { name } = user
+                            res.send(View({ body: Search({ name, path: '/search' }) })) // !!
+                            res.redirect('/search')
+                        }
+                    })
+                } catch {
+                    //
+                }
             })
         } catch(error) {
             // TODO handling
         }
     })
 }) 
+
+app.get('/search', (req, res) => {
+    res.send(View({ body: Search({ name, path:'/search' }) }))
+})
 
 app.listen(port, () => console.log(`server running on port ${port}`))
