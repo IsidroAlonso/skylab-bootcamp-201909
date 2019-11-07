@@ -1,4 +1,4 @@
-module.exports = function(section) {
+module.exports = function({ body }) {
     return `<!DOCTYPE html>
     <html lang="en">
     
@@ -12,7 +12,7 @@ module.exports = function(section) {
     </head>
     
     <body>
-        ${section}
+        ${body}
     </body>
 </html>`
 }
