@@ -8,6 +8,7 @@ const registerUser = require('./logic/register-user')
 const authenticateUser = require('./logic/authenticate-user')
 const retrieveUser = require('./logic/retrieve-user')
 const Search = require('./components/search')
+const searchDucks = require('./logic/search-ducks')
 
 const { argv: [, , port = 8080] } = process // process.argv[2] = 8080
 
@@ -57,21 +58,9 @@ app.post('/login', (req, res) => {
 
         try {
             authenticateUser(email, password, (error, credentials) => { 
-                if (error) res.send('error chungo!')
-                try {
-                    const { id, token } = credentials // destructuring
-                    retrieveUser(id, token, (error, user) => {
-                        if (error) res.send('error chungo!')
-
-                        else {
-                            const { name } = user
-                            res.send(View({ body: Search({ name, path: '/search' }) })) // !!
-                            res.redirect('/search')
-                        }
-                    })
-                } catch {
-                    //
-                }
+                if (error) res.send('TODO error handling')
+                
+                res.redirect('/search')
             })
         } catch(error) {
             // TODO handling
@@ -80,7 +69,13 @@ app.post('/login', (req, res) => {
 }) 
 
 app.get('/search', (req, res) => {
-    res.send(View({ body: Search({ name, path:'/search' }) }))
+    try {
+        retrieveUser(id, token, (error, user) => {
+            res.send(View({ body: Search({ path: '/search', name }) }))
+        })
+    } catch (error) {
+        // TODO handling
+    }
 })
 
 app.listen(port, () => console.log(`server running on port ${port}`))
