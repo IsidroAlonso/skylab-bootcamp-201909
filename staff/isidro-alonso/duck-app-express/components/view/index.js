@@ -1,4 +1,4 @@
-module.exports = function({ body }) {
+module.exports = function ({ body }) {
     return `<!DOCTYPE html>
     <html lang="en">
     
