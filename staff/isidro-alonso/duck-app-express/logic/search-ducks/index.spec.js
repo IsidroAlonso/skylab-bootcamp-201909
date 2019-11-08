@@ -33,7 +33,7 @@ describe('logic - search ducks', () => {
         const query = 'blue'
 
         searchDucks(id, token, query, (error, ducks) => {
-            expect(error).not.to.exist
+            expect(error).to.not.exist
 
             expect(ducks).to.exist
             expect(ducks.length).to.be.greaterThan(0)
@@ -73,7 +73,7 @@ describe('logic - search ducks', () => {
             const query = 'blue'
 
             searchDucks(id, token, query, (error, ducks) => {
-                expect(error).not.to.exist
+                expect(error).to.not.exist
 
                 expect(ducks).to.exist
                 expect(ducks.length).to.be.greaterThan(0)
@@ -111,7 +111,7 @@ describe('logic - search ducks', () => {
         const query = 'asdfljasdf'
 
         searchDucks(id, token, query, (error, ducks) => {
-            expect(ducks).not.to.exist
+            expect(ducks).to.not.exist
 
             expect(error).to.exist
 

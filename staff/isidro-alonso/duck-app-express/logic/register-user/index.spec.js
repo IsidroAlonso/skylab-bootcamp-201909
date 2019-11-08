@@ -15,8 +15,8 @@ describe('logic - register user', () => {
 
     it('should succeed on correct credentials', done => {
         registerUser(name, surname, email, password, (error, response) => {
-            expect(error).not.to.exist
-            expect(response).not.to.exist
+            expect(error).to.not.exist
+            expect(response).to.not.exist
 
             done()
         })
@@ -32,7 +32,7 @@ describe('logic - register user', () => {
 
         it('should fail on already existing user', done => {
             registerUser(name, surname, email, password, (error, response) => {
-                expect(response).not.to.exist
+                expect(response).to.not.exist
                 expect(error).to.exist
 
                 expect(error.message).to.exist

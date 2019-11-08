@@ -20,7 +20,7 @@ describe('logic - authenticate user', () => {
 
     it('should succeed on correct credentials', done => {
         authenticateUser(email, password, (error, response) => {
-            expect(error).not.to.exist
+            expect(error).to.not.exist
 
             expect(response).to.exist
 
