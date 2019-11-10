@@ -6,7 +6,7 @@ module.exports = function ({ path, error }) {
         <h1 class="login__title">Login</h1>
         <input class="login__field" type="email" name="email" placeholder="e-mail">
         <input class="login__field" type="password" name="password" placeholder="password">
-        <button class="login__submit">📨</button>
+        <button class="login__submit">🗝</button>
     </form>
 
     ${error ? Feedback({ message: error }) : ''}

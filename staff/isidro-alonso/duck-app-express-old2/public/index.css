@@ -243,4 +243,45 @@ body {
   cursor: pointer;
 }
 
+.detail {
+  background-color: skyblue;
+  border: 0.3rem solid blue;
+  border-radius: 1rem;
+  border-style: dotted;
+  text-decoration: none;
+  padding: 0.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.detail__title {
+  color: blue;
+  font-size: 2rem;
+  margin: 0.5rem auto 0.5rem auto;
+}
+.detail__image {
+  display: block;
+  border-radius: 1rem;
+  margin: 0.5rem auto 0.5rem auto;
+  max-width: 80vw;
+}
+.detail__description {
+  color: blue;
+}
+.detail__price {
+  display: inline-block;
+  border: 0.3rem solid white;
+  border-radius: 1rem;
+  border-style: dotted;
+  color: white;
+  background-color: red;
+  padding: 0.5rem;
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+.detail__fav {
+  display: inline-block;
+  margin: 0.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=index.css.map */

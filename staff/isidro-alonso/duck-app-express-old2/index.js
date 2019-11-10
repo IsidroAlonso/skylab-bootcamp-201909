@@ -1,7 +1,6 @@
 const express = require('express')
 const { View, Landing, Register, Login, Search } = require('./components')
 const { registerUser, authenticateUser, retrieveUser, searchDucks, toggleFavDuck } = require('./logic')
-// const logic = require('./logic')
 const { bodyParser, cookieParser } = require('./utils/middlewares')
 
 const { argv: [, , port = 8080] } = process
@@ -44,9 +43,7 @@ app.post('/login', bodyParser, (req, res) => {
             .then(credentials => {
                 const { id, token } = credentials
 
-                sessions[id] = { token }
-
-                //console.dir(sessions)
+                sessions[id] = token
 
                 res.setHeader('set-cookie', `id=${id}`)
 
@@ -121,21 +118,10 @@ app.post('/fav', cookieParser, bodyParser, (req, res) => {
 
         toggleFavDuck(id, token, duckId)
             .then(() => res.redirect(`/search?q=${query}`))
-            .catch(({ message }) => {
-                res.send('TODO error handling')
-            })
+            .catch(({ message }) => res.send(View({ body: Search({ path: '/search', query, name, logout: '/logout', error: message }) })))
     } catch ({ message }) {
-        res.send('TODO error handling')
+        res.send(View({ body: Search({ path: '/search', query, name, logout: '/logout', error: message }) }))
     }
 })
 
-app.get('/ducks/:id', (req, res) => {
-    const { params: { id } } = req
-
-    // TODO control session, etc
-
-    res.send('TODO detail of duck ' + id)
-})
-
 app.listen(port, () => console.log(`server running on port ${port}`))
-
