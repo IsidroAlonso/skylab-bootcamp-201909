@@ -1,5 +1,5 @@
-const call = require('../../helpers/call')
 const validate = require('../../utils/validate')
+const call = require('../../helpers/call')
 
 module.exports = function (id, token, duckId) {
     validate.string(id)
@@ -7,9 +7,9 @@ module.exports = function (id, token, duckId) {
     validate.string(token)
     validate.string.notVoid('token', token)
     validate.string(duckId)
-    validate.string.notVoid('duckId', duckId)
+    validate.string.notVoid('duck id', duckId)
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) =>
         call('GET', undefined, `https://duckling-api.herokuapp.com/api/ducks/${duckId}`, undefined, result => {
             if (result.error) return reject(new Error(result.error))
 
@@ -27,5 +27,5 @@ module.exports = function (id, token, duckId) {
                 resolve(result)
             })
         })
-    })
+    )
 }

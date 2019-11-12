@@ -1,4 +1,8 @@
-describe('logic - retrieve duck', () => {
+const { expect } = require('chai')
+const call = require('../../helpers/call')
+const retrieveDuck = require('.')
+
+describe.only('logic - retrieve duck', () => {
     let name, surname, email, password, id, token, duckId = '5c3853aebd1bde8520e66e11'
 
     beforeEach(done => {
@@ -25,38 +29,35 @@ describe('logic - retrieve duck', () => {
         })
     })
 
-    it('should succeed on correct duck id', done => {
-        retrieveDuck(id, token, duckId, (error, duck) => {
-            expect(error).toBeUndefined()
+    it('should succeed on correct duck id', () =>
+        retrieveDuck(id, token, duckId)
+            .then(duck => {
+                expect(duck).to.exist
+                expect(duck.id).to.equal(duckId)
 
-            expect(duck).toBeDefined()
-            expect(duck.id).toBe(duckId)
+                expect(duck.title).to.exist
+                expect(typeof duck.title).to.equal('string')
+                expect(duck.title.length).to.be.greaterThan(0)
 
-            expect(duck.title).toBeDefined()
-            expect(typeof duck.title).toBe('string')
-            expect(duck.title.length).toBeGreaterThan(0)
+                expect(duck.image).to.exist
+                expect(typeof duck.image).to.equal('string')
+                expect(duck.image.length).to.be.greaterThan(0)
 
-            expect(duck.image).toBeDefined()
-            expect(typeof duck.image).toBe('string')
-            expect(duck.image.length).toBeGreaterThan(0)
+                expect(duck.description).to.exist
+                expect(typeof duck.description).to.equal('string')
+                expect(duck.description.length).to.be.greaterThan(0)
 
-            expect(duck.description).toBeDefined()
-            expect(typeof duck.description).toBe('string')
-            expect(duck.description.length).toBeGreaterThan(0)
+                expect(duck.link).to.exist
+                expect(typeof duck.link).to.equal('string')
+                expect(duck.link.length).to.be.greaterThan(0)
 
-            expect(duck.link).toBeDefined()
-            expect(typeof duck.link).toBe('string')
-            expect(duck.link.length).toBeGreaterThan(0)
+                expect(duck.price).to.exist
+                expect(typeof duck.price).to.equal('string')
+                expect(duck.price.length).to.be.greaterThan(0)
 
-            expect(duck.price).toBeDefined()
-            expect(typeof duck.price).toBe('string')
-            expect(duck.price.length).toBeGreaterThan(0)
-
-            expect(duck.isFav).toBeFalsy()
-
-            done()
-        })
-    })
+                expect(duck.isFav).to.be.false
+            })
+    )
 
     describe('when fav already exists', () => {
         beforeEach(done => {
@@ -65,71 +66,59 @@ describe('logic - retrieve duck', () => {
             })
         })
 
-        it('should succeed on correct duck id', done => {
-            retrieveDuck(id, token, duckId, (error, duck) => {
-                expect(error).toBeUndefined()
-    
-                expect(duck).toBeDefined()
-                expect(duck.id).toBe(duckId)
-    
-                expect(duck.title).toBeDefined()
-                expect(typeof duck.title).toBe('string')
-                expect(duck.title.length).toBeGreaterThan(0)
-    
-                expect(duck.image).toBeDefined()
-                expect(typeof duck.image).toBe('string')
-                expect(duck.image.length).toBeGreaterThan(0)
-    
-                expect(duck.description).toBeDefined()
-                expect(typeof duck.description).toBe('string')
-                expect(duck.description.length).toBeGreaterThan(0)
-    
-                expect(duck.link).toBeDefined()
-                expect(typeof duck.link).toBe('string')
-                expect(duck.link.length).toBeGreaterThan(0)
-    
-                expect(duck.price).toBeDefined()
-                expect(typeof duck.price).toBe('string')
-                expect(duck.price.length).toBeGreaterThan(0)
-    
-                expect(duck.isFav).toBeTruthy()
-    
-                done()
+        it('should succeed on correct duck id', () =>
+            retrieveDuck(id, token, duckId, duck => {
+                expect(duck).to.exist
+                expect(duck.id).to.equal(duckId)
+
+                expect(duck.title).to.exist
+                expect(typeof duck.title).to.equal('string')
+                expect(duck.title.length).to.be.greaterThan(0)
+
+                expect(duck.image).to.exist
+                expect(typeof duck.image).to.equal('string')
+                expect(duck.image.length).to.be.greaterThan(0)
+
+                expect(duck.description).to.exist
+                expect(typeof duck.description).to.equal('string')
+                expect(duck.description.length).to.be.greaterThan(0)
+
+                expect(duck.link).to.exist
+                expect(typeof duck.link).to.equal('string')
+                expect(duck.link.length).to.be.greaterThan(0)
+
+                expect(duck.price).to.exist
+                expect(typeof duck.price).to.equal('string')
+                expect(duck.price.length).to.be.greaterThan(0)
+
+                expect(duck.isFav).to.be.true
             })
-        })
+        )
     })
 
-    it('should fail on incorrect duck id', done => {
+    it('should fail on incorrect duck id', () => {
         const wrongDuckId = '5c3853ABCd1bde8520e66e1b'
 
-        retrieveDuck(id, token, wrongDuckId, (error, duck) => {
-            expect(duck).toBeUndefined()
+        retrieveDuck(id, token, wrongDuckId)
+            .then(() => { throw new Error('should not reach this point') })
+            .catch(error => {
+                expect(error).to.exist
 
-            expect(error).toBeDefined()
-
-            expect(error.message).toBeDefined()
-            expect(typeof error.message).toBe('string')
-            expect(error.message.length).toBeGreaterThan(0)
-
-            done()
-        })
+                expect(error.message).to.exist
+                expect(typeof error.message).to.equal('string')
+                expect(error.message.length).to.be.greaterThan(0)
+                expect(error. message).to.equal(`duck with id ${wrongDuckId} not found`)
+            })
     })
 
     it('should fail on incorrect id or expression types', () => {
         // TODO cases when id and token have values diff from non-empty string
 
-        expect(() => { retrieveDuck(id, token, 1) }).toThrowError(TypeError, '1 is not a string')
-        expect(() => { retrieveDuck(id, token, true) }).toThrowError(TypeError, 'true is not a string')
-        expect(() => { retrieveDuck(id, token, []) }).toThrowError(TypeError, ' is not a string')
-        expect(() => { retrieveDuck(id, token, {}) }).toThrowError(TypeError, '[object Object] is not a string')
-        expect(() => { retrieveDuck(id, token, undefined) }).toThrowError(TypeError, 'undefined is not a string')
-        expect(() => { retrieveDuck(id, token, null) }).toThrowError(TypeError, 'null is not a string')
-
-        expect(() => { retrieveDuck(id, token, 'red', 1) }).toThrowError(TypeError, '1 is not a function')
-        expect(() => { retrieveDuck(id, token, 'red', true) }).toThrowError(TypeError, 'true is not a function')
-        expect(() => { retrieveDuck(id, token, 'red', []) }).toThrowError(TypeError, ' is not a function')
-        expect(() => { retrieveDuck(id, token, 'red', {}) }).toThrowError(TypeError, '[object Object] is not a function')
-        expect(() => { retrieveDuck(id, token, 'red', undefined) }).toThrowError(TypeError, 'undefined is not a function')
-        expect(() => { retrieveDuck(id, token, 'red', null) }).toThrowError(TypeError, 'null is not a function')
+        expect(() => { retrieveDuck(id, token, 1) }).to.throw(TypeError, '1 is not a string')
+        expect(() => { retrieveDuck(id, token, true) }).to.throw(TypeError, 'true is not a string')
+        expect(() => { retrieveDuck(id, token, []) }).to.throw(TypeError, ' is not a string')
+        expect(() => { retrieveDuck(id, token, {}) }).to.throw(TypeError, '[object Object] is not a string')
+        expect(() => { retrieveDuck(id, token, undefined) }).to.throw(TypeError, 'undefined is not a string')
+        expect(() => { retrieveDuck(id, token, null) }).to.throw(TypeError, 'null is not a string')
     })
 })

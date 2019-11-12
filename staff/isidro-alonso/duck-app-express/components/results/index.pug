@@ -1,0 +1,4 @@
+mixin results(items)
+    ul.results
+        +items.map(item => onItemRender(item)).join('')
+        //- ${items.map(item => onItemRender(item)).join('')}

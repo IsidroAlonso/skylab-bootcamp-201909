@@ -1,6 +1,7 @@
 const Feedback = require('../feedback')
 const Results = require('../results')
 const ResultItem = require('../result-item')
+// const ResultItemDark = require('../result-item-dark')
 
 module.exports = function ({ path, query, name, logout, error, results, favPath, detailPath }) {
     return `<section class="view search">

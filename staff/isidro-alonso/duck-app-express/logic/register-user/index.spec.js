@@ -1,6 +1,6 @@
 const { expect } = require('chai')
 const call = require('../../helpers/call')
-const registerUser = require('../register-user')
+const registerUser = require('.')
 const { ContentError } = require('../../utils/errors')
 
 describe('logic - register user', () => {

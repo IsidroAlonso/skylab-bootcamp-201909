@@ -1,0 +1,12 @@
+mixin detail()
+    section.view.detail
+        h2.detail__title= title
+        img.detail__image(src=image)
+        p.detail__description= description
+        a.detail__store(href=link) Go to store
+        span.detail__price= price
+        span.detail__fav
+            form(method="post" action=favPath)
+                input(type="hidden" name="id" value=id)
+                button(type="submit")= isFav? ❤️ : 💔
+        a.detail__back(href=backPath) Go back

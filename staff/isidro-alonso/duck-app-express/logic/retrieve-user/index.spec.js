@@ -1,6 +1,6 @@
 const { expect } = require('chai')
 const call = require('../../helpers/call')
-const retrieveUser = require('../retrieve-user')
+const retrieveUser = require('.')
 
 describe('logic - retrieve user', () => {
     let name, surname, email, password, id, token
