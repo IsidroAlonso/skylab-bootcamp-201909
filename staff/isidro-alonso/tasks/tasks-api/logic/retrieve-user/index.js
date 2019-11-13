@@ -11,8 +11,8 @@ module.exports = function (id) {
 
         if (!user) return reject(new NotFoundError(`user with id ${id} not found`))
 
-        const { id: _id, name, surname, email, username } = user
+        const { name, surname, email, username } = user
 
-        resolve({ id: _id, name, surname, email, username })
+        resolve({ id, name, surname, email, username })
     })
 }
