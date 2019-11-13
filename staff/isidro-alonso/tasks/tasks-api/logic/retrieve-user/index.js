@@ -1,18 +1,18 @@
 const validate = require('../../utils/validate')
-const users = require('../../data/users.json')
-const fs = require('fs')
-const path = require('path')
-const { ContentError } = require('../../utils/errors')
+const users = require('../../data/users')
+const { NotFoundError } = require('../../utils/errors')
 
-module.exports = function(id, token) {
+module.exports = function (id) {
     validate.string(id)
     validate.string.notVoid('id', id)
-    validate.string(token)
-    validate.string.notVoid('token', token)
 
     return new Promise((resolve, reject) => {
-        // call('GET', token, `https://skylabcoders.herokuapp.com/api/user/${id}`, undefined, result => {
-        //     result.error ? reject(new Error(result.error)) : resolve(result.data)
-        // })
+        const user = users.find(user => user.id === id)
+
+        if (!user) return reject(new NotFoundError(`user with id ${id} not found`))
+
+        const { id: _id, name, surname, email, username } = user
+
+        resolve({ id: _id, name, surname, email, username })
     })
 }
