@@ -10,13 +10,13 @@ module.exports = function (name = 'index') {
 
     return manager ? manager : manager = {
         load() {
-            return this.tasks ? Promise.resolve() : fs.readFile(path.join(__dirname, `./${name}.json`))
+            return this.users ? Promise.resolve() : fs.readFile(path.join(__dirname, `../../data/tasks/${name}.json`))
                 .then(json => JSON.parse(json))
                 .then(tasks => { this.tasks = tasks })
         },
 
         persist() {
-            return fs.writeFile(path.join(__dirname, `./${name}.json`), JSON.stringify(this.tasks, undefined, 4))
+            return fs.writeFile(path.join(__dirname, `../../data/tasks/${name}.json`), JSON.stringify(this.tasks, undefined, 4))
         },
 
         get data() {

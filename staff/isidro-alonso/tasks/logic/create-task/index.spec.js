@@ -1,43 +1,47 @@
 const { expect } = require('chai')
-const tasks = require('../../data/tasks')() // poner 'test' no funcona
+const users = require('../../data/users')('test')
+const tasks = require('../../data/tasks')('test')
 const createTask = require('.')
-const { ContentError } = require('../../utils/errors')
 const { random } = Math
+const uuid = require('uuid')
 
-describe.only('logic - create task', () => {
-    before(() => tasks.load())
+describe('logic - create task', () => {
+    before(() => Promise.all([users.load(), tasks.load()]))
 
-    let id, user, title, description, status, date
+    let id, name, surname, email, username, password, title, description
 
     beforeEach(() => {
-        id = `ID: ${random()}`
-        user = `User: ${random()}`
-        title = `Task Title: ${random()}`
-        description = `Description: ${random()}`
-        status = `i.e. TODO or DONE? ${random()}`
-        date = `Date: ${random()}`
+        id = uuid()
+        name = `name-${random()}`
+        surname = `surname-${random()}`
+        email = `email-${random()}@mail.com`
+        username = `username-${random()}`
+        password = `password-${random()}`
+
+        users.data.push({ id, name, surname, email, username, password })
+
+        title = `title-${random()}`
+        description = `description-${random()}`
     })
 
-    it('should create a new task', () =>
-        createTask(id, user, title, description, status, date)
-            .then(response => {
-                expect(response).to.be.undefined
+    it('should succeed on correct user and task data', () =>
+        createTask(id, title, description)
+            .then(taskId => {
+                expect(taskId).to.exist
+                expect(taskId).to.be.a('string')
+                expect(taskId).to.have.length.greaterThan(0)
 
-                const task = tasks.data.find(task => task.id === id)
+                const task = tasks.data.find(({ id }) => id === taskId)
 
                 expect(task).to.exist
-
-                expect(task.id).to.equal(id)
-                expect(task.user).to.equal(user)
+                expect(task.user).to.equal(id)
                 expect(task.title).to.equal(title)
                 expect(task.description).to.equal(description)
-                expect(task.status).to.equal(status)
-                expect(task.date).to.equal(date)
-
-                const { id } = task
-                expect(id).to.exist
-                expect(id).to.be.a('string')
-                expect(id).to.have.length.greaterThan(0)
+                expect(task.status).to.equal('TODO')
+                expect(task.date).to.exist
+                expect(task.date).to.be.instanceOf(Date)
             })
     )
+
+    // TODO other test cases
 })
