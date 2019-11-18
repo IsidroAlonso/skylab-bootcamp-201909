@@ -33,6 +33,10 @@ const validate = {
 
     email(target) {
         if (!EMAIL_REGEX.test(String(target).toLowerCase())) throw new ContentError(`${target} is not an e-mail`)
+    },
+
+    matches(name, target, ...values) {
+        if (!values.includes(target)) throw new ContentError(`${target} does not match any of the valid ${name} values: ${values}`)   
     }
 }
 

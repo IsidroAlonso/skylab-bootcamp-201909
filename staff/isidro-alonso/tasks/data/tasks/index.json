@@ -73,9 +73,10 @@
     {
         "id": "85f5e14e-763e-41b5-91d7-9cc4c8e409c3",
         "user": "72cc5e20-44e0-4169-8f34-95c7ca845b48",
-        "title": "hola mundo",
-        "description": "blah blah blah",
-        "status": "TODO",
-        "date": "2019-11-14T16:00:14.093Z"
+        "title": "new title 2",
+        "description": "new desc 2",
+        "status": "REVIEW",
+        "date": "2019-11-14T16:00:14.093Z",
+        "lastAccess": "2019-11-15T11:33:03.208Z"
     }
 ]

@@ -1,11 +1,20 @@
+require('dotenv').config()
+const { env: { DB_URL_TEST }} = process
 const { expect } = require('chai')
-const users = require('../../data/users')('test')
 const registerUser = require('.')
 const { ContentError } = require('../../utils/errors')
 const { random } = Math
+const database = require('../../utils/database')
 
 describe('logic - register user', () => {
-    before(() => users.load())
+    let client, users
+
+    before(() => {
+        client = database(DB_URL_TEST)
+
+        return client.connect()
+            .then(connection => users = connection.db().collection('users'))
+    })
 
     let name, surname, email, username, password
 
@@ -22,8 +31,9 @@ describe('logic - register user', () => {
             .then(response => {
                 expect(response).to.be.undefined
 
-                const user = users.data.find(user => user.username === username)
-
+                return users.findOne({ username })
+            })
+            .then(user => {
                 expect(user).to.exist
 
                 expect(user.name).to.equal(name)
@@ -31,18 +41,13 @@ describe('logic - register user', () => {
                 expect(user.email).to.equal(email)
                 expect(user.username).to.equal(username)
                 expect(user.password).to.equal(password)
-
-                const { id } = user
-                expect(id).to.exist
-                expect(id).to.be.a('string')
-                expect(id).to.have.length.greaterThan(0)
             })
     )
 
     describe('when user already exists', () => {
-        beforeEach(() => {
-            users.data.push({ name, surname, email, username, password })
-        })
+        beforeEach(() =>
+            users.insertOne({ name, surname, email, username, password })
+        )
 
         it('should fail on already existing user', () =>
             registerUser(name, surname, email, username, password)
@@ -106,4 +111,6 @@ describe('logic - register user', () => {
     })
 
     // TODO other cases
+
+    after(() => client.close())
 })

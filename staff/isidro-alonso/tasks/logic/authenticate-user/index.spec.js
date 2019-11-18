@@ -1,34 +1,42 @@
+require('dotenv').config()
+const { env: { DB_URL_TEST } } = process
 const { expect } = require('chai')
-const users = require('../../data/users')('test')
 const authenticateUser = require('.')
 const { ContentError, CredentialsError } = require('../../utils/errors')
 const { random } = Math
-const uuid = require('uuid/v4')
+const database = require('../../utils/database')
 
 describe('logic - authenticate user', () => {
-    before(() => users.load())
+    let client, users
+
+    before(() => {
+        client = database(DB_URL_TEST)
+
+        return client.connect()
+            .then(connection => users = connection.db().collection('users'))
+    })
 
     let id, name, surname, email, username, password
 
     beforeEach(() => {
-        id = uuid()
         name = `name-${random()}`
         surname = `surname-${random()}`
         email = `email-${random()}@mail.com`
         username = `username-${random()}`
         password = `password-${random()}`
 
-        users.data.push({ id, name, surname, email, username, password })
+        return users.insertOne({ name, surname, email, username, password })
+            .then(({ insertedId }) => id = insertedId.toString())
     })
 
     it('should succeed on correct credentials', () =>
         authenticateUser(username, password)
-            .then(_id => {
-                expect(_id).to.exist
-                expect(typeof _id).to.equal('string')
-                expect(_id.length).to.be.greaterThan(0)
+            .then(userId => {
+                expect(userId).to.exist
+                expect(typeof userId).to.equal('string')
+                expect(userId.length).to.be.greaterThan(0)
 
-                expect(_id).to.equal(id)
+                expect(userId).to.equal(id)
             })
     )
 
@@ -85,4 +93,6 @@ describe('logic - authenticate user', () => {
     })
 
     // TODO other cases
+
+    after(() => client.close())
 })
