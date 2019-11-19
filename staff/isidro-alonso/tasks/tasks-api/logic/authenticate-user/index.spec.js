@@ -13,7 +13,7 @@ describe('logic - authenticate user', () => {
         client = database(DB_URL_TEST)
 
         return client.connect()
-            .then(connection => users = connection.db().collection('users'))
+            .then(db => users = db.collection('users'))
     })
 
     let id, name, surname, email, username, password
@@ -25,7 +25,8 @@ describe('logic - authenticate user', () => {
         username = `username-${random()}`
         password = `password-${random()}`
 
-        return users.insertOne({ name, surname, email, username, password })
+        return users.deleteMany()
+            .then(() => users.insertOne({ name, surname, email, username, password }))
             .then(({ insertedId }) => id = insertedId.toString())
     })
 
@@ -94,5 +95,5 @@ describe('logic - authenticate user', () => {
 
     // TODO other cases
 
-    after(() => client.close())
+    after(() => users.deleteMany().then(client.close))
 })

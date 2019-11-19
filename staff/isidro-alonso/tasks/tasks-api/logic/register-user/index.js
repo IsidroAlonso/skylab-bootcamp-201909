@@ -1,7 +1,6 @@
 const validate = require('../../utils/validate')
-const uuid = require('uuid/v4')
 const { ConflictError } = require('../../utils/errors')
-const database = require('../../utils/database')
+const { models: { User } } = require('../../data')
 
 module.exports = function (name, surname, email, username, password) {
     validate.string(name)
@@ -16,21 +15,11 @@ module.exports = function (name, surname, email, username, password) {
     validate.string(password)
     validate.string.notVoid('password', password)
 
+    return User.findOne({ username })
+        .then(user => {
+            if (user) throw new ConflictError(`user with username ${username} already exists`)
 
-    const client = database()
-
-    return client.connect()
-        .then(connection => {
-            const users = connection.db().collection('users')
-
-            return users.findOne({ username })
-                .then(user => {
-                    if (user) throw new ConflictError(`user with username ${username} already exists`)
-
-                    return users.insertOne({ name, surname, email, username, password })
-                })
-                .then(result => {
-                    if (!result.insertedCount) throw Error('failed to create user')
-                })
+            return User.create({ name, surname, email, username, password })
         })
+        .then(() => { }) // lo devuelve en blanco pq te da igual lo que devuelva, ya que has controlado los errores en la raiz del index
 }

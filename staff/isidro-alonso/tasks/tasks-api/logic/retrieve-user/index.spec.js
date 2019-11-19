@@ -1,24 +1,33 @@
+require('dotenv').config()
+const { env: { DB_URL_TEST }} = process
 const { expect } = require('chai')
 const { random } = Math
-const users = require('../../data/users')('test')
+const database = require('../../utils/database')
 const retrieveUser = require('.')
-const uuid = require('uuid/v4')
 const { NotFoundError } = require('../../utils/errors')
 
 describe('logic - retrieve user', () => {
-    before(() => users.load())
+    let client, users
+
+    before(() => {
+        client = database(DB_URL_TEST)
+
+        return client.connect()
+            .then(db => users = db.collection('users'))
+    })
 
     let id, name, surname, email, username, password
 
     beforeEach(() => {
-        id = uuid()
         name = `name-${random()}`
         surname = `surname-${random()}`
         email = `email-${random()}@mail.com`
         username = `username-${random()}`
         password = `password-${random()}`
 
-        users.data.push({ id, name, surname, email, username, password })
+        return users.deleteMany()
+            .then(() => users.insertOne({ name, surname, email, username, password }))
+            .then(({ insertedId }) => id = insertedId.toString())
     })
 
     it('should succeed on correct user id', () =>
@@ -26,6 +35,7 @@ describe('logic - retrieve user', () => {
             .then(user => {
                 expect(user).to.exist
                 expect(user.id).to.equal(id)
+                expect(user._id).to.not.exist
                 expect(user.name).to.equal(name)
                 expect(user.surname).to.equal(surname)
                 expect(user.email).to.equal(email)
@@ -35,7 +45,7 @@ describe('logic - retrieve user', () => {
     )
 
     it('should fail on wrong user id', () => {
-        const id = 'wrong'
+        const id = '012345678901234567890123'
 
         return retrieveUser(id)
             .then(() => {
@@ -49,4 +59,6 @@ describe('logic - retrieve user', () => {
     })
 
     // TODO other cases
+
+    after(() => users.deleteMany().then(client.close))
 })

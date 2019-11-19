@@ -1,7 +1,9 @@
 const validate = require('../../utils/validate')
 const { NotFoundError } = require('../../utils/errors')
-const database = require('../../utils/database')
-const { ObjectId } = database
+const { models: { User } } = require('../../data') // ??
+const { models: { Task } } = require('../../data')
+// const database = require('../../utils/database')
+// const { ObjectId } = database
 
 module.exports = function (id, title, description) {
     validate.string(id)
@@ -14,9 +16,7 @@ module.exports = function (id, title, description) {
     const client = database()
 
     return client.connect()
-        .then(connection => {
-            const db = connection.db()
-
+        .then(db => {
             users = db.collection('users')
             tasks = db.collection('tasks')
 
