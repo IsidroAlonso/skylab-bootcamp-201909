@@ -4,9 +4,9 @@ const { expect } = require('chai')
 const registerUser = require('.')
 const { ContentError } = require('../../utils/errors')
 const { random } = Math
-const { database, models: { User }} = require('../../data')
+const { models: { User }, database } = require('../../data')
 
-describe.only('logic - register user', () => {
+describe('logic - register user', () => {
     before(() => database.connect(DB_URL_TEST))
 
     let name, surname, email, username, password
