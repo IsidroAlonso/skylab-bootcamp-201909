@@ -1,43 +1,33 @@
 const validate = require('../../utils/validate')
 const { NotFoundError } = require('../../utils/errors')
-const { models: { User } } = require('../../data') // ??
-const { models: { Task } } = require('../../data')
-// const database = require('../../utils/database')
-// const { ObjectId } = database
+const { ObjectId, models: { User, Task } } = require('../../data')
 
 module.exports = function (id, title, description) {
     validate.string(id)
     validate.string.notVoid('id', id)
+    if (!ObjectId.isValid(id)) throw new ContentError(`${id} is not a valid id`)
+
     validate.string(title)
     validate.string.notVoid('title', title)
+
     validate.string(description)
     validate.string.notVoid('description', description)
 
-    const client = database()
+    return (async () => {
+        const user = await User.findById(id)
 
-    return client.connect()
-        .then(db => {
-            users = db.collection('users')
-            tasks = db.collection('tasks')
+        if (!user) throw new NotFoundError(`user with id ${id} not found`)
 
-            return users.findOne({ _id: ObjectId(id) })
-                .then(user => {
-                    if (!user) throw new NotFoundError(`user with id ${id} not found`)
+        const task = await Task.create({ user: id, title, description })
 
-                    const task = {
-                        user: ObjectId(id),
-                        title,
-                        description,
-                        status: 'TODO',
-                        date: new Date
-                    }
+        return task.id
+    })()
 
-                    return tasks.insertOne(task)
-                })
-                .then(result => {
-                    if (!result.insertedCount) throw new Error('failed to create task')
+    // return User.findById(id)
+    //     .then(user => {
+    //         if (!user) throw new NotFoundError(`user with id ${id} not found`)
 
-                    return result.insertedId.toString()
-                })
-        })
+    //         return Task.create({ user: id, title, description })
+    //     })
+    //     .then(task => task.id)
 }

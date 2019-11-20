@@ -1,10 +1,10 @@
 require('dotenv').config()
-const { env: { DB_URL_TEST }} = process
+const { env: { DB_URL_TEST } } = process
 const { expect } = require('chai')
 const registerUser = require('.')
 const { ContentError } = require('../../utils/errors')
 const { random } = Math
-const { models: { User }, database } = require('../../data')
+const { database, models: { User } } = require('../../data')
 
 describe('logic - register user', () => {
     before(() => database.connect(DB_URL_TEST))
@@ -21,43 +21,39 @@ describe('logic - register user', () => {
         return User.deleteMany()
     })
 
-    it('should succeed on correct credentials', () =>
-        registerUser(name, surname, email, username, password)
-            .then(response => {
-                expect(response).to.be.undefined
+    it('should succeed on correct credentials', async () => {
+        const response = await registerUser(name, surname, email, username, password)
 
-                return User.findOne({ username })
-            })
-            .then(user => {
-                expect(user).to.exist
+        expect(response).to.be.undefined
 
-                expect(user.name).to.equal(name)
-                expect(user.surname).to.equal(surname)
-                expect(user.email).to.equal(email)
-                expect(user.username).to.equal(username)
-                expect(user.password).to.equal(password)
-            })
-    )
+        const user = await User.findOne({ username })
+
+        expect(user).to.exist
+
+        expect(user.name).to.equal(name)
+        expect(user.surname).to.equal(surname)
+        expect(user.email).to.equal(email)
+        expect(user.username).to.equal(username)
+        expect(user.password).to.equal(password)
+    })
 
     describe('when user already exists', () => {
-        beforeEach(() =>
-            User.create({ name, surname, email, username, password })
-        )
+        beforeEach(() => User.create({ name, surname, email, username, password }))
 
-        it('should fail on already existing user', () =>
-            registerUser(name, surname, email, username, password)
-                .then(() => {
-                    throw Error('should not reach this point')
-                })
-                .catch(error => {
-                    expect(error).to.exist
+        it('should fail on already existing user', async () => {
+            try {
+                await registerUser(name, surname, email, username, password)
 
-                    expect(error.message).to.exist
-                    expect(typeof error.message).to.equal('string')
-                    expect(error.message.length).to.be.greaterThan(0)
-                    expect(error.message).to.equal(`user with username ${username} already exists`)
-                })
-        )
+                throw Error('should not reach this point')
+            } catch (error) {
+                expect(error).to.exist
+
+                expect(error.message).to.exist
+                expect(typeof error.message).to.equal('string')
+                expect(error.message.length).to.be.greaterThan(0)
+                expect(error.message).to.equal(`user with username ${username} already exists`)
+            }
+        })
     })
 
     it('should fail on incorrect name, surname, email, password, or expression type and content', () => {

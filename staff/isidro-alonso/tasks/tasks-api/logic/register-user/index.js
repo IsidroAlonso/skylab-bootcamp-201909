@@ -15,11 +15,11 @@ module.exports = function (name, surname, email, username, password) {
     validate.string(password)
     validate.string.notVoid('password', password)
 
-    return User.findOne({ username })
-        .then(user => {
-            if (user) throw new ConflictError(`user with username ${username} already exists`)
+    return (async () => {
+        const user = await User.findOne({ username })
 
-            return User.create({ name, surname, email, username, password })
-        })
-        .then(() => { }) // lo devuelve en blanco pq te da igual lo que devuelva, ya que has controlado los errores en la raiz del index
+        if (user) throw new ConflictError(`user with username ${username} already exists`)
+
+        await User.create({ name, surname, email, username, password })
+    })()
 }
