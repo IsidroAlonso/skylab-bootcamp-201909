@@ -13,8 +13,8 @@ module.exports = function (id, title, description) {
     validate.string(description)
 	validate.string.notVoid('description', description)
 	
-	return (async () => {
-        const res = await call(`${API_URL}/users`, {
+	return (async () => { // falta que llame a usuarios
+        const res = await call(`${API_URL}/tasks`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id, title, description })

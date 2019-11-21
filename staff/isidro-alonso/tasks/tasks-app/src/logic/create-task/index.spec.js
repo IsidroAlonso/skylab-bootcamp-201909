@@ -30,19 +30,19 @@ describe('logic - create task', () => {
     it('should succeed on correct user and task data', async () => {
         const taskId = await createTask(id, title, description)
 
-        expect(taskId).to.exist
-        expect(taskId).to.be.a('string')
-        expect(taskId).to.have.length.greaterThan(0)
+        expect(taskId).toBeDefined()
+        expect(taskId).toBe('string')
+        expect(taskId).toBeGreaterThan(0)
 
         const task = await Task.findById(taskId)
 
-        expect(task).to.exist
-        expect(task.user.toString()).to.equal(id)
-        expect(task.title).to.equal(title)
-        expect(task.description).to.equal(description)
-        expect(task.status).to.equal('TODO')
-        expect(task.date).to.exist
-        expect(task.date).to.be.instanceOf(Date)
+        expect(task).toBeDefined()
+        expect(task.user.toString()).toBe(id)
+        expect(task.title).toBe(title)
+        expect(task.description).toBe(description)
+        expect(task.status).toBe('TODO')
+        expect(task.date).toBeDefined()
+        expect(task.date).toBeInstanceOf(Date)
     })
 
     // TODO other test cases
