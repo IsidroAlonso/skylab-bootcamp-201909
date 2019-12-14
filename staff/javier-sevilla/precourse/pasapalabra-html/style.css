@@ -1,0 +1,161 @@
+body {
+    background-color: rgb(27, 80, 97);
+    margin-left: 60px;
+
+
+}
+
+h1, h4 {
+    color: whitesmoke;
+    margin-left: 175px;
+    font-family: verdana;
+    margin-top: 5px;
+
+}
+
+
+ol {
+    color: rgb(0, 0, 0);
+    margin-left: 190px;
+    font-family: Times;
+    font-size: 17px;
+
+}
+.letras {
+    float: left;
+    background-color: rgb(236, 169, 69);
+    width: 40px;
+    height: 40px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 50px;
+    border-color: beige;
+    margin-top: 1px;
+    margin-left: 18px;
+    text-align: center;
+    font-size: 29px;
+    
+};
+
+.ranking {
+    float: left;
+    background-color: rgb(135, 137, 138);
+    width: 150px;
+    height: 200px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: rgb(24, 24, 23);
+    margin-top: 0px;
+    margin-left: 67px;
+    margin-right: 15px;
+    text-align: left;
+    font-size: 13px;
+    
+};
+
+.contador {
+    float: left;
+    background-color: rgb(127, 204, 56);
+    width: 90px;
+    height: 90px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 12px;
+    border-color: rgb(27, 27, 27);
+    margin-top: 0px;
+    text-align: center;
+    font-size: 25px; 
+    text-align: justify;
+    
+      
+};
+
+.pregunta {
+    background-color: rgb(197, 203, 206);
+    width: 650px;
+    height: 80px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 12px;
+    border-color: beige;
+    margin-top: 50px;
+    margin-left: 350px;
+    text-align: center;
+    font-size: 18px; 
+
+
+};
+.respuesta {
+    margin-top: 25px;
+    margin-left: 490px;
+    font-size: 20px;
+
+      
+};
+
+
+.submit {
+    width:80px;
+    height:40px;
+    margin-left: 8px;
+    margin-top: 10px;
+    font-size:16px;
+    font-family: Verdana;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 12px;
+    border-color: rgb(26, 26, 19);
+    
+};
+
+.pasa {
+    width:140px;
+    height:40px;
+    margin-left: 0px;
+    margin-top: 4px;
+    font-size:16px;
+    font-family: Verdana;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 12px;
+    border-color: rgb(26, 26, 19);
+    
+};
+
+.stop {
+    width:100px;
+    height:40px;
+    margin-left: 0px;
+    margin-top: 4px;
+    font-size:16px;
+    font-family: Verdana;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 12px;
+    border-color: rgb(26, 26, 19);
+    
+};
+
+.resp {
+    background-color: rgb(253, 254, 255);
+    width: 130px;
+    height: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 12px;
+    border-color: beige;
+    margin-top: 1px;
+    margin-left: 350px;
+    text-align: center;
+    font-size: 11px; 
+    float: left;
+
+
+};
+
+
+
+
+
+

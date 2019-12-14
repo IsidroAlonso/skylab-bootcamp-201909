@@ -1,4 +1,5 @@
 describe('shuffle', function () {
+    
     it('should mix array with string values (staff names)', function () {
         var staff = ['adri-campo', 'adrian-zhu', 'aitor-parra', 'albert-ferrer', 'cristian-astudillo', 'diana-moreno', 'elena-rodriguez', 'fatima-mata', 'isidro-alonso', 'javier-sevilla', 'joan-luis', 'jose-rodriguez', 'luka-bontempi', 'marta-penya', 'martin-garcia', 'nacho-rivero', 'noli-pascual', 'oscar-rodriguez', 'ruben-vidales', 'xavier-navarro'];
 

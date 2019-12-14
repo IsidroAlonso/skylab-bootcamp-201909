@@ -1,0 +1,305 @@
+/*:root{
+    size: 2000px;
+}*/
+
+/*.container{
+    width: 1000px;
+    height: 1000px;
+    background-color: linear-gradient(to top, #ee0909,#0ca7c2)
+}*/
+html {
+    font-size: 100%;
+    font-weight: 400;
+    line-height: 1.3;
+}
+body {
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(to top, #74ebd5, #e20303);
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* donde apareceran las preguntas*/
+.display{
+    width: 75vh;
+    height: 25vh;
+    color: rgb(5, 3, 3);
+    font-size: 2vh;;
+    padding: 0.5em 0.75em;
+    text-align: left;
+    border:3px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    height: 5vh;
+}
+
+.textbox {
+    width: 41vh;
+    clear: both;
+    display: flex;
+    justify-content: center;
+}
+  
+.textbox input {
+    width: 100%;
+    clear: both;
+    height: 2vh;
+    
+}
+
+/* espacio para botones */
+.botones {
+    border:3px solid #000;
+    height: 5vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* lo que aparece en el boton (color letra, fondo...) */
+button {
+    background-color: rgb(235, 18, 18);
+    color: aqua;
+    width: 10vh;
+    height: 5vh;
+    align-items: stretch;
+    border-radius: 20%;
+    align-content: space-around;
+    visibility: hidden;
+}
+/*submit es distinto que button hay que usar el id*/
+#send{
+    background-color: #000;
+    color: aqua;
+    width: 10vh;
+    height: 5vh;
+    border-radius: 20%;
+    visibility: hidden;
+}
+#end{
+    visibility: hidden;
+}
+#pasapalabra{
+    visibility: hidden;
+}
+#stop{
+    visibility: hidden;
+}
+#start{
+    visibility: visible;
+}
+
+/*circulo */
+.letters{
+    width: 400px;
+    height: 400px;
+    justify-content:center;
+    align-items: flex-end;
+    background-color: linear-gradient(236deg, #74ebd5, #e20303);
+    border: 3px solid #000;
+    border-radius: 50%;
+    position: relative;
+}
+/*conjunto de letras o rombo de letras*/
+.letter{
+    justify-content:center;
+    align-items: flex-end;
+    height: 100%;
+    position: absolute;
+    left:calc(50% - 1.05em);
+}
+/*letras individuales*/
+.letter div{
+    width: 2em;
+    line-height: 2em;
+    color:black;
+    text-align: center;
+    vertical-align: middle;
+    border: 2px solid rgb(70, 190, 54);
+    border-radius: 50%;
+    background-color: #76daf8;
+}
+.feedback{
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.a div{
+    transform: rotate(-13.5deg);
+}
+.a{
+    transform: rotate(13.5deg);
+}
+
+.b div{
+    transform: rotate(-27deg);
+}
+.b{
+    transform: rotate(27deg);
+}
+
+.c div{
+    transform: rotate(-40.5deg);
+}
+.c{
+    transform: rotate(40.5deg);
+}
+.d div{
+    transform: rotate(-54deg);
+}
+.d{
+    transform: rotate(54deg);
+}
+
+.e div{
+    transform: rotate(-67.5deg);
+}
+.e{
+    transform: rotate(67.5deg);
+}
+
+.f div{
+    transform: rotate(-81deg);
+}
+.f{
+    transform: rotate(81deg);
+}
+
+.g div{
+    transform: rotate(-94.5deg);
+}
+.g{
+    transform: rotate(94.5deg);
+}
+
+.h div{
+    transform: rotate(-108deg);
+}
+.h{
+    transform: rotate(108deg);
+}
+
+.i div{
+    transform: rotate(-121.5deg);
+}
+.i{
+    transform: rotate(121.5deg);
+}
+
+.j div{
+    transform: rotate(-135deg);
+}
+.j{
+    transform: rotate(135deg);
+}
+
+.k div{
+    transform: rotate(-148.5deg);
+}
+.k{
+    transform: rotate(148.5deg);
+}
+
+.l div{
+    transform: rotate(-162deg);
+}
+.l{
+    transform: rotate(162deg);
+}
+
+.m div{
+    transform: rotate(-175.5deg);
+}
+.m{
+    transform: rotate(175.5deg);
+}
+
+.n div{
+    transform: rotate(-189deg);
+}
+.n{
+    transform: rotate(189deg);
+}
+
+.ñ div{
+    transform: rotate(-202.5deg);
+}
+.ñ{
+    transform: rotate(202.5deg);
+}
+.o div{
+    transform: rotate(-216deg);
+}
+.o{
+    transform: rotate(216deg);
+}
+.p div{
+    transform: rotate(-229.5deg);
+}
+.p{
+    transform: rotate(229.5deg);
+}
+.q div{
+    transform: rotate(-243deg);
+}
+.q{
+    transform: rotate(243deg);
+}
+.r div{
+    transform: rotate(-256.5deg);
+}
+.r{
+    transform: rotate(256.5deg);
+}
+.s div{
+    transform: rotate(-270deg)
+}
+.s{
+    transform: rotate(270deg)
+}
+.t div{
+    transform: rotate(-283.5deg)
+}
+.t{
+    transform: rotate(283.5deg)
+}
+.u div{
+    transform: rotate(-297deg)
+}
+.u{
+    transform: rotate(297deg)
+}
+.v div{
+    transform: rotate(-310.5deg)
+}
+.v{
+    transform: rotate(310.5deg)
+}
+.w div{
+    transform: rotate(-324deg)
+}
+.w{
+    transform: rotate(324deg)
+}
+.x div{
+    transform: rotate(-337.5deg)
+}
+.x{
+    transform: rotate(337.5deg)
+}
+.y div{
+    transform: rotate(-351deg)
+}
+.y{
+    transform: rotate(351deg)
+}
+.z div{
+    transform: rotate(-364.5deg)
+}
+.z{
+    transform: rotate(364.5deg)
+}

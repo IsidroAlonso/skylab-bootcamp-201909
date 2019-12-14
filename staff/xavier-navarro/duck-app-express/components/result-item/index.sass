@@ -1,0 +1,18 @@
+.duck
+    display: grid
+    grid-template-areas: "title price" "img img"
+    &__title
+        grid-area: title
+        text-decoration: none
+        color: #000
+        cursor: pointer
+    &__price
+        grid-area: price
+        color: #01664e
+        font-weight: bold
+        @extend %flex-center
+    &__img
+        grid-area: img
+        width: 100%
+        max-width: 250px
+        margin: 0 auto

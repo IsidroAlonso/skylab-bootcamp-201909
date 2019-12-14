@@ -1,0 +1,97 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.calculator {
+    border: 3px solid rgb(82, 4, 4);
+    border-radius: 5%;
+    background-image: url("maderafondo1.jpg");
+    background-color: rgb(251, 255, 212);
+    max-width: 290px;
+    margin: 50px 50px;
+    padding: 15px;
+}
+
+.calculator td button{
+    display:block;
+    width:60px;
+    height: 60px;
+    font-size: 14px;
+  }
+
+#resultados, .boton , .boton_op {
+    border: 1px solid rgb(97, 7, 7);
+    border-radius: 4px;
+} 
+
+#resultados {
+    display:block;
+    text-align: right;
+    font-size: 30px;
+    font-family: helvetica;
+    font-weight: bold;
+    margin: 12px 1px 16px 1px;
+    width: 260px;
+    height: 100px;
+    line-height: 80px;
+    padding: 1px;
+    background-color: rgb(255, 240, 212);
+    overflow-x: scroll;
+  }
+
+
+.boton {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: helvetica;
+    color: rgb(112, 36, 1); 
+    width: 60px;
+    height: 60px;
+    margin:1px;
+    background-color: rgb(253, 232, 173);
+
+}
+
+.boton_op {
+    font-size: 20px;
+    font-weight: normal;
+    font-family: helvetica;
+    color: rgb(253, 232, 173);
+    width: 60px;
+    height: 60px;
+    margin:1px;
+    background-color: rgb(112, 36, 1); 
+    border-color: rgb(253, 232, 173);
+
+}
+
+
+.boton:hover {
+background-color: rgb(135, 236, 194);
+border: 2px solid white;
+}
+
+.boton_op:hover {
+   
+    background-color: rgb(135, 236, 194);
+    color: black;
+    border: 2px solid white;
+}
+
+#AC {
+    width: 126px;
+    height: 60px;
+    margin: 1px 1px 1px 1px;
+    padding:1px 1px;
+}
+
+#cero {
+    width: 126px;
+    height: 60px;
+    margin: 1px 1px 1px 1px;
+    padding: 1px 1px;
+}
+
+

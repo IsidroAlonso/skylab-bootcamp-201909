@@ -1,0 +1,45 @@
+/* header */
+
+$color-title: brown;
+$bg-col: rgba($color: yellowgreen, $alpha: .3);;
+
+.header {
+    background-color: $bg-col;
+}
+
+.header__title {
+    font-family: Impact, Arial, Helvetica, sans-serif;
+    color: $color-title;
+}
+
+.header__input {
+
+}
+
+.header__button {
+
+}
+
+.header__text {
+
+}
+
+.header__textlink {
+
+}
+
+.header__nav {
+
+}
+
+.header__list {
+
+}
+
+.header__listelement {
+
+}
+
+.header__listlink {
+
+}

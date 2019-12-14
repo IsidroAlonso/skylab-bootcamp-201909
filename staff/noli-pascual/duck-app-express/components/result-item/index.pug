@@ -1,0 +1,12 @@
+mixin result-item(item, favPath, detailPath)
+    - const { id, title, image, price, isFav } = item
+    
+    li.results__item
+        a.item(href=`${detailPath}/${id}`)
+            h2.item__title= title
+            img.item__image(src=image)
+            span.item__price= price
+            span.item__fav
+                form(method="post" action=favPath)
+                    input(type="hidden" name="id" value=id)
+                    button(type="submit")= isFav ? '🧡' : '💔'

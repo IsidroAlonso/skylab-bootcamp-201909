@@ -1,0 +1,83 @@
+.result
+    width: 100%  
+    & header
+        display: flex        
+        & i
+            margin-right: 0.5vw
+            
+
+.result__main    
+    .main__article
+        display: flex
+        flex-direction: column
+        justify-items: center
+        align-items: center
+
+        & .article__title
+            width: 100%
+            font-size: 1.5rem
+
+        & .article__image 
+            background-size: cover
+            max-width: 80%
+            border-radius: 2rem
+            cursor: pointer 
+            margin-top: 2vh
+            margin-bottom: 2vh
+        & .article__description
+            margin-bottom: 2vh
+
+.article__details
+            display: flex
+            justify-content: space-around
+            margin-top: 2vh
+            align-items: center
+            &__image
+                width:2.5vw
+            &__price
+                float: left
+                font-size: 2rem
+                margin-bottom: 2vh
+            
+
+
+@media only screen and ( min-width: 768px  )
+    .article__specs__container
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        align-items: flex-start
+        .article__image
+            width: 50%
+            flex-grow: 1
+        .article__description
+            margin-left: 2vw
+            margin-top: 7vh
+            width: 70%
+       
+.main__article 
+    margin: 10vh 0vw 0vh 0vw
+
+    & .article__title
+        font-size: 1.2rem
+        margin-bottom: 1vh
+        font-weight: bold
+        width: 80%
+        height: 7vh
+    & .article__price
+        margin-top:1vh
+    & .article__image 
+        background-size: cover
+        max-width:40vh
+        min-width: 5vh
+            
+        border-radius: 2rem
+        cursor: pointer 
+
+.article__specs__container
+    display: flex
+    flex-direction: column
+    align-content: center
+    align-items: center
+ 
+

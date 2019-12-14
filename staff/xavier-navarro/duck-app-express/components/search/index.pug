@@ -1,0 +1,18 @@
+extends ../views/index
+include ../feedback/index
+
+block body
+    header.header__container.header
+        .header__logo
+            img.image(src='https://amsterdamduckstore.com/wp-content/uploads/2018/01/Sneowboard-rubber-duck-Amsterdam-Duck-Store.jpg', alt='DUCKGO')
+        .header__company-name
+            h1.title *DUCKSTAR*
+        .header__home
+            p #{name}
+            p
+            a(href=favListPath) My favorites
+        .header__search.search
+            form#duck-search.search__form(method='GET', action=path)
+            input.search__input(type='search', name='q', placeholder='Search', ${query?='', `value='${query}`', :='', ''='', }='')
+    if error
+        +feedback(error)

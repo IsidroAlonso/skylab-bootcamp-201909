@@ -1,0 +1,6 @@
+include ../result-item/index
+
+mixin results(results, favPath, detailPath)
+    ul.results
+        each item in results
+            +result-item(item, favPath, detailPath)

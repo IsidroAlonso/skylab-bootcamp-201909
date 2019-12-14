@@ -1,0 +1,16 @@
+extends ../view/index
+
+include ../feedback/index
+
+block body
+    section.view.register
+        form(method="post" action=path)
+            h1.register__title ⭐️🐥⭐️DUCK APP⭐️🐥⭐️
+            h1.register__title REGISTER
+            input.register__field(type="text" name="name" placeholder="Name")
+            input.register__field(type="text" name="surname" placeholder="Surname")
+            input.register__field(type="email" name="email" placeholder="E-mail")
+            input.register__field(type="password" name="password" placeholder="Password")
+            button.register__submit ➡️
+        if error
+            +feedback(error)

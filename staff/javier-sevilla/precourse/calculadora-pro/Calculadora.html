@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora</title>
+</head>
+<style>
+    .button {
+        background-color: rgb(63, 62, 59);
+        width:100px;
+        height:70px;
+        font-size:30px;
+        font-family: Verdana;
+        color:rgb(255, 255, 255); 
+        margin: 14px; 
+        border-radius: 16px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      
+    }
+    .button0 {
+        background-color: rgb(63, 62, 59);
+        width:232px;
+        height:70px;
+        font-size:30px;
+        font-family: Verdana;
+        color:rgb(255, 255, 255); 
+        margin: 14px; 
+        border-radius: 16px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      
+    }
+    .buttondel {
+        background-color: rgb(63, 62, 59);
+        width:310px;
+        height:70px;
+        font-size:30px;
+        font-family: Verdana;
+        color:rgb(255, 255, 255); 
+        margin: 14px; 
+        margin-right: 70px;
+        border-radius: 16px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      
+    }
+
+    .buttonsign {
+        background-color: rgb(235, 181, 21);
+        width:170px;
+        height:70px;
+        font-size:30px;
+        font-family: Verdana;
+        color:rgb(255, 255, 255); 
+        margin: 14px; 
+        border-radius: 16px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      
+    }
+    .calc {
+        margin-left: 380px;
+        margin-top: 40px;
+        position: absolute;
+        border: 1px solid rgb(7, 7, 7);
+        background-color: rgb(26, 25, 25);
+        border-radius: 16px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);      
+    }
+
+    p {
+        width:605px;
+        height:70px;
+        font-size:55px;
+        text-align: right;
+        background-color: rgb(49, 47, 47);
+        color:rgb(255, 255, 255); 
+        border: 2px;
+        border-style: solid;
+        border-color: rgb(107, 93, 93);
+        margin-bottom: 1px;
+        margin-top:1px;
+        border-radius: 16px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+
+    body {
+        background-color: rgb(48, 46, 46); 
+        padding:10px;
+    }
+
+</style>
+<body>
+
+    <div class="calc">
+        <p  id="num">0</p>
+        <button class="buttondel" onmousedown="mDown(this)" onmouseup="mUp(this)" type="button" onclick="deletenum()">DEL</button>      
+        <button class="buttonsign" onmousedown="mDownsign(this)" onmouseup="mUpsign(this)" type="button" onclick="entrada('/')">/</button>
+        <br>
+        <button class="button " onmousedown="mDown(this)" onmouseup="mUp(this)" type="button" onclick="entrada(7)">7</button>
+        <button class="button " onmousedown="mDown(this)" onmouseup="mUp(this)" type="button" onclick="entrada(8)">8</button>   
+        <button class="button " onmousedown="mDown(this)" onmouseup="mUp(this)" type="button" onclick="entrada(9)">9</button>
+        <button class="buttonsign " onmousedown="mDownsign(this)" onmouseup="mUpsign(this)" type="button" onclick="entrada('X')">X</button>
+        <br>
+        <button class="button " onmousedown="mDown(this)" onmouseup="mUp(this)" type="button" onclick="entrada(4)">4</button>
+        <button class="button " onmousedown="mDown(this)" onmouseup="mUp(this)" type="button" onclick="entrada(5)">5</button>
+        <button class="button " onmousedown="mDown(this)" onmouseup="mUp(this)" type="button" onclick="entrada(6)">6</button>
+        <button class="buttonsign " onmousedown="mDownsign(this)" onmouseup="mUpsign(this)" type="button" onclick="entrada('-')">-</button>
+        <br>
+        <button class="button " onmousedown="mDown(this)" onmouseup="mUp(this)" type="button" onclick="entrada(1)">1</button>
+        <button class="button " onmousedown="mDown(this)" onmouseup="mUp(this)" type="button" onclick="entrada(2)">2</button>
+        <button class="button " onmousedown="mDown(this)" onmouseup="mUp(this)" type="button" onclick="entrada(3)">3</button>
+        <button class="buttonsign " onmousedown="mDownsign(this)" onmouseup="mUpsign(this)" type="button" onclick="entrada('+')">+</button>
+        <br>
+        <button class="button0 " onmousedown="mDown(this)" onmouseup="mUp(this)" type="button" onclick="entrada(0)">0</button>
+        <button class="button " onmousedown="mDown(this)" onmouseup="mUp(this)" type="button" onclick="entrada('.')">.</button>
+        <button class="buttonsign " onmousedown="mDownsign(this)" onmouseup="mUpsign(this)" type="button" onclick="entrada('=')">=</button>
+
+    </div>
+
+
+
+    <script>
+        let total = 0;
+        let signo = "";
+        let ent1 = "";
+        let ent2 = "";
+        let num1 = 0;
+        let num2 = 0;
+        let cont1 = 0;
+        let cont2 = 0;
+        let fin = false;
+
+        function deletenum(){
+            document.getElementById("num").innerHTML = "0";  
+            total = 0;
+            signo = "";
+            num1 = 0;
+            num2 = 0;
+            ent1 = "";
+            ent2 = "";
+            cont1 = 0;
+            cont2 = 0;
+            fin = true;
+        }
+
+        function entrada(ent){
+            if (ent === "=") {
+                num1 = parseFloat(ent1);
+                num2 = parseFloat(ent2);
+               switch (signo) {
+                    case "+":
+                        total = num1 + num2;
+                        total = parseFloat(total);
+                        break;
+                    case "-":
+                        total = num1 - num2;
+                        total = parseFloat(total);
+                        break;
+                    case "X":
+                        total = num1 * num2;
+                        total = parseFloat(total);
+                        break;
+                    case "/":
+                        total = num1 / num2;
+                        total = parseFloat(total);
+                        break;
+               }
+               
+               ent1 = total;
+               ent2 = "";
+               //signo = "";
+               cont2 = 0;
+               document.getElementById("num").innerHTML = total; 
+            } else {
+                if (signo != "") {  
+                   if (ent != "+" & ent != "-" & ent != "X" & ent != "/") {
+                     if (cont2 > 15) {return}
+                     cont2 += 1;
+                     ent2 += ent
+                     document.getElementById("num").innerHTML = ent2;    
+                   }else {
+                       signo = ent;
+                   }
+                } else if (ent === "+" || ent === "-" || ent === "/"  || ent === "X") {
+                        signo = ent;                
+                } else {
+                        if (cont1 > 15) {return}
+                        cont1 += 1;
+                        ent1 += ent 
+                        document.getElementById("num").innerHTML = ent1;             
+                }
+            };
+             
+        };
+
+        function mDown(obj) {
+          obj.style.backgroundColor = "#66645d";
+        
+        }
+        
+        function mUp(obj) {
+          obj.style.backgroundColor = "rgb(63, 62, 59)";
+        }
+
+        function mDownsign(obj) {
+          obj.style.backgroundColor = "rgb(238, 209, 121)";
+        
+        }
+        
+        function mUpsign(obj) {
+          obj.style.backgroundColor = "rgb(235, 181, 21)";
+        }
+    </script>
+
+</body>
+</html>
+

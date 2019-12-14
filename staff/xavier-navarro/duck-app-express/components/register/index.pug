@@ -1,0 +1,15 @@
+extends ../views/index
+include ../feedback/index
+
+block body
+    section.view.register
+        form.register__form(method='POST', action='/register')
+            h1.register__title Register
+            input.register__input(type='text', name='name', placeholder='name')
+            input.register__input(type='text', name='surname', placeholder='surname')
+            input.register__input(type='email', name='email', placeholder='e-mail')
+            input.register__input(type='password', name='password', placeholder='password')
+            button.login__submit Entrar
+            a(class="btn__register" href=path) DuckIN
+        if error
+            +feedback(error)

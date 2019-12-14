@@ -1,0 +1,18 @@
+extends ../view/index 
+
+block body
+    div.view.detail
+        section.result.view
+            div.detail-list
+                h1.detail-list__header <h1 class="detail-list__header">⭐️🐥⭐️DUCK APP⭐️🐥⭐️</h1>
+                h2.detail-list__title=item.title
+                img.detail-list__image(src=item.image)
+                p.detail-list__description=item.description
+                a.detail-list__store(href=item.link) GO TO STORE
+                p.detail-list__price=item.price
+                a.detail-list__button(href=backPath) GO BACK
+                span
+                    form(method="post" action=favPath)
+                        input(type="hidden" name="id" value=item.id)
+                        button.item-list__buttonfav(type="submit")
+                            img.item-list__fav(src=(item.isFav? "https://images.emojiterra.com/google/android-pie/512px/2764.png" : "https://image.flaticon.com/icons/png/512/22/22236.png"))

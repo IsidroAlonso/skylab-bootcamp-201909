@@ -1,0 +1,282 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: silver;
+}
+
+.view {
+  border-radius: 1rem;
+  width: 100vw;
+  height: 100%;
+  padding: 3vw;
+  text-align: center;
+}
+
+.feedback {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: black;
+}
+.feedback__icon {
+  font-size: 1.5rem;
+}
+.feedback__message {
+  display: inline;
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.landing {
+  background-color: olive;
+  text-decoration: none;
+  height: 100vh;
+  padding: 0.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.landing__title {
+  color: #ffffff;
+  font-size: 2rem;
+  margin: 0.5rem auto 0.5rem auto;
+}
+.landing__options {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin: 0.5rem auto 0.5rem auto;
+}
+
+.register {
+  background-color: black;
+  width: 50%;
+  margin: 20% auto;
+  border: 0.3rem solid #ffffff;
+  border-radius: 1rem;
+  text-decoration: none;
+  padding: 0.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.register__title {
+  color: #ffffff;
+  font-size: 2rem;
+  margin: 0.5rem auto 0.5rem auto;
+}
+.register__field {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.register__submit {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.login {
+  background-color: black;
+  width: 50%;
+  margin: 20% auto;
+  border: 0.3rem solid #ffffff;
+  border-radius: 1rem;
+  text-decoration: none;
+  padding: 0.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.login__title {
+  color: #ffffff;
+  font-size: 2rem;
+  margin: 0.5rem auto 0.5rem auto;
+}
+.login__field {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.login__submit {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.search {
+  border-radius: 1rem;
+  text-decoration: none;
+  padding: 0.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.search__form {
+  margin: 0.5rem;
+}
+.search__title {
+  color: black;
+  font-size: 2rem;
+  margin: 0.5rem auto 0.5rem auto;
+}
+.search__user {
+  display: block;
+  color: red;
+  font-size: 1.5rem;
+  margin: 0.5rem auto 0.5rem auto;
+}
+.search__logout {
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+.search__icon {
+  font-size: 1.5rem;
+}
+.search__criteria {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.search__submit {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+.search__favs {
+  width: 100%;
+}
+
+.results {
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 0.5rem;
+  list-style: none;
+  colunns: 3;
+}
+.results__item {
+  display: inline-block;
+  border-radius: 1rem;
+  margin: 1rem;
+}
+
+.item {
+  display: inline-block;
+  background-color: olive;
+  border: 0.3rem solid black;
+  border-radius: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.item__title {
+  color: #ffffff;
+}
+.item__image {
+  display: block;
+  border-radius: 0.5rem;
+  margin: 0.5rem auto 0.5rem auto;
+  max-width: 20vw;
+}
+.item__price {
+  display: inline-block;
+  border: 0.3rem solid white;
+  border-radius: 1rem;
+  color: white;
+  background-color: red;
+  padding: 0.5rem;
+  font-size: 2rem;
+}
+.item__fav {
+  display: inline-block;
+  margin: 0.5rem;
+  font-size: 2rem;
+}
+.item__fav button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.item-dark {
+  display: inline-block;
+  background-color: black;
+  border: 0.3rem solid darkgray;
+  border-radius: 1rem;
+  border-style: dotted;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.item-dark__title {
+  color: darkgray;
+}
+.item-dark__image {
+  display: block;
+  border-radius: 0.5rem;
+  margin: 0.5rem auto 0.5rem auto;
+  max-width: 20vw;
+}
+.item-dark__price {
+  display: inline-block;
+  border: 0.3rem solid white;
+  border-radius: 1rem;
+  border-style: dotted;
+  color: white;
+  background-color: red;
+  padding: 0.5rem;
+  font-size: 2rem;
+}
+.item-dark__fav {
+  display: inline-block;
+  margin: 0.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.detail {
+  text-decoration: none;
+  padding: 0.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.detail__title {
+  color: black;
+  font-size: 2rem;
+  margin: 0.5rem auto 0.5rem auto;
+}
+.detail__image {
+  display: block;
+  border-radius: 1rem;
+  margin: 0.5rem auto 0.5rem auto;
+  max-width: 80vw;
+}
+.detail__description {
+  color: black;
+  width: 70%;
+  margin: 0 auto;
+}
+.detail__price {
+  display: inline-block;
+  border: 0.3rem solid white;
+  border-radius: 1rem;
+  color: white;
+  background-color: red;
+  padding: 0.5rem;
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+.detail__fav {
+  display: inline-block;
+  margin: 0.5rem;
+  font-size: 2rem;
+}
+.detail__fav button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+.detail__back {
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=index.css.map */

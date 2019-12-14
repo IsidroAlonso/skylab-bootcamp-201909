@@ -56,6 +56,7 @@ register.onSubmit = (name, surname, email, password) => {
     try {
         registerUser(name, surname, email, password, function(){
             document.getElementsByClassName('register')[0].classList.add('hidden')
+            document.getElementsByClassName('search__form')[0].classList.remove('hidden')
             document.getElementsByClassName('main')[0].classList.remove('hidden')
         });
     } catch (error) {

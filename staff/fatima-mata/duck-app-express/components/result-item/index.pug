@@ -1,0 +1,10 @@
+mixin result-item(duck)
+        a.item-list__link(href='/ducks/' + duck.id)
+            h2.item-list__title= duck.title 
+            img.item-list__image(src=duck.image)
+            p.item-list__price= duck.price
+            span
+                form(method="post" action=favPath)
+                    input(type="hidden" name="id" value=duck.id)
+                    button.item-list__buttonfav(type="submit")
+                        img.item-list__fav(src=(duck.isFav? "https://images.emojiterra.com/google/android-pie/512px/2764.png" : "https://image.flaticon.com/icons/png/512/22/22236.png"))

@@ -1,0 +1,75 @@
+.header {
+  /* border: 1px solid  */
+  grid-area: header;
+}
+.header__top {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.header__menu {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+}
+.header__logo-container {
+  width: 60%;
+}
+.header__logo {
+  width: 100%;
+}
+.header__bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer {
+  border: 1px solid;
+  grid-area: footer;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  width: 100%;
+  border: 1px solid blue;
+  grid-area: main;
+  display: grid;
+}
+.main .sale {
+  width: 100%;
+  background-image: url("https://www.desigual.com/dw/image/v2/BCVV_PRD/on/demandware.static/-/Library-Sites-DsglSharedLibrary/default/dwe1c0245c/campaigns/2019/AW2019/W40/MSS/MSS_home_hero1_01_mobile_all.jpg?sfrm=jpg&sw=767");
+  color: #ffffff;
+}
+.main .renew {
+  width: 100%;
+}
+.main .renew__container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.main .renew__container__fig {
+  width: 30%;
+}
+.main .collection-special {
+  width: 100%;
+}
+.main .news {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+img .grid {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-areas: "header main footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 10% 60% 30%;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,81 @@
+body {
+  background-color:#1f2833;
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 150%;
+  text-align: center;
+  text-shadow: 5px 5px 10px black;
+  color: rgb(209, 164, 164);
+  box-shadow: #858585;
+}
+
+.calculator {
+  height: 480px;
+  width: 290px;
+  left: 550px;
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  border: 5px solid #3333;
+  position: absolute; 
+
+  background-color: #6d1212d8;
+}
+
+#screenTotal {
+  border: 1px solid black;
+  text-align: right;
+  width: 285px;
+  height: 80px;
+  top: 5px;
+  font-size: 40px;
+  box-shadow: #858585;
+  line-height: 2;
+
+  background: #858585;
+}
+
+.button {
+  font-size: 30px;
+  line-height: 2.3;
+  border-radius: 40px;
+}
+
+#buttons {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 70px 70px 70px 70px;
+  grid-template-rows: 70px 70px 70px 70px 70px;
+  gap: 4px;
+  text-align: center;
+}
+
+#key-clear {
+  background: red;
+  color: white
+}
+
+#key, #key-dot {
+  color: white;
+  background: rgb(0, 0, 0);
+}
+
+#key-equal, #key-operations {
+  background: rgb(10, 10, 223); 
+  color: white; 
+}
+
+#key-equal {
+  grid-column: 4/5;
+  grid-row: 6/2;
+  line-height: 9;
+}
+
+#buttons :hover {
+  background: rgb(50, 61, 50);
+}

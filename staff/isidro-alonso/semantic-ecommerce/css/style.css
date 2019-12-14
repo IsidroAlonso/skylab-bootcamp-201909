@@ -1,0 +1,30 @@
+/* main content container */
+.content {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* header */
+.header {
+  background-color: rgba(154, 205, 50, 0.3);
+}
+
+.header__title {
+  font-family: Impact, Arial, Helvetica, sans-serif;
+  color: brown;
+}
+
+/* product list in main page */
+/* product content and details */
+/* related products list */
+/* footer */
+/* desktop & tablet */
+@media only screen and (min-width: 768px) {
+  .content {
+    background-color: aquamarine;
+  }
+}
+body {
+  margin: 0px;
+}
+
+/*# sourceMappingURL=style.css.map */

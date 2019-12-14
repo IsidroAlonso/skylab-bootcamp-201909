@@ -1,0 +1,23 @@
+extends ../view/index 
+
+include ../feedback/index
+include ../results/index
+include ../result-item/index  
+
+block body
+    section.view.search
+        h1.search__title <h1 class="search__title">⭐️🐥⭐️DUCK APP⭐️🐥⭐️</h1>
+        h2.search__title <h1 class="search__title">Hello #{name}</h1>  
+        form(method="post" action=logout)
+            button.search__logout LOGOUT
+        a.search__logout(href=myfavs) MY FAVORITES
+        form.search__form(method="get" action=path)
+            input#search__formitem.search__input(type="search" name="q" value=query || '')
+            button.search__button 🔎SEARCH
+            if error
+                +feedback(error)
+        if results
+            +results(results)
+
+
+

@@ -1,0 +1,26 @@
+extends ../view/index
+
+include ../feedback/index
+include ../results/index
+
+block body
+    -let { name, surname, username } = user
+    section.view.search._hide
+        h1.search__title
+            | Welcome name
+            form(metho='post' action=logout)
+            button.search__logout Logout
+        h2.search__user This is your personal info: 
+        form.search__form
+            span.search__icon Name: 
+            input.search__criteria(type='text' name='name' value=name disabled='')
+            span.search__icon Surname: 
+            input.search__criteria(type='text' name='surname' value=surname disabled='')
+            span.search__icon e-mail: 
+            input.search__criteria(type='text' name='email' value=username disabled='')
+        a.detail__back(href=goBack) Go back
+        h2.search__user Theese are your favorites: 
+            if error
+                +feedback(error)
+            if results
+                +results(results, favPath, detailPath)

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Duck App</title>
+    <link rel="stylesheet" href="public/index.css">
+    <link rel="shortcut icon" href="public/icon.png" type="image/x-icon">
+</head>
+
+<body>
+    <section class="view search">
+        <h1 class="search__title">Search</h1><a href="/userpage">
+            <h2 class="search__user">Oscar</h2>
+        </a>
+        <form method="post" action="/logout"><button class="search__logout">Logout</button></form>
+        <form class="search__form" method="GET" action="/search"><span class="search__icon">🐣</span><input
+                class="search__criteria" type="text" name="query" placeholder="criteria" value=""><button
+                class="search__submit">🔍</button>
+            <ul class="results">
+                <li class="results__item"><a class="item" href="/ducks/5c3853aebd1bde8520e66e90">
+                        <h2 class="item__title">Coffee Rubber Duck</h2><img class="item__image"
+                            src="https://amsterdamduckstore.com/wp-content/uploads/2016/02/coffee-rubber-duck-front.jpg" /><span
+                            class="item__price">8.95 €</span><span class="item__fav">
+                            <form method="post" action="/fav"><input type="hidden" name="id"
+                                    value="5c3853aebd1bde8520e66e90" /><button type="submit">💔</button></form>
+                        </span>
+                    </a></li>
+                <li class="results__item"><a class="item" href="/ducks/5c3853aebd1bde8520e66e24">
+                        <h2 class="item__title">Pond Trooper Rubber Duck – Pond Wars Ducks</h2><img class="item__image"
+                            src="https://amsterdamduckstore.com/wp-content/uploads/2016/06/Pond-trooper-Rubber-Duck-front-pond-war-ducks.jpg" /><span
+                            class="item__price">18 €</span><span class="item__fav">
+                            <form method="post" action="/fav"><input type="hidden" name="id"
+                                    value="5c3853aebd1bde8520e66e24" /><button type="submit">🧡</button></form>
+                        </span>
+                    </a></li>
+                <li class="results__item"><a class="item" href="/ducks/5c3853aebd1bde8520e66e70">
+                        <h2 class="item__title">Ghost Rubber Duck</h2><img class="item__image"
+                            src="https://amsterdamduckstore.com/wp-content/uploads/2015/10/ghost-rubber-duck-front.jpg" /><span
+                            class="item__price">8.95 €</span><span class="item__fav">
+                            <form method="post" action="/fav"><input type="hidden" name="id"
+                                    value="5c3853aebd1bde8520e66e70" /><button type="submit">🧡</button></form>
+                        </span>
+                    </a></li>
+            </ul>
+        </form>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+
+<head>
+    <meta charset="utf-8">
+    <title>Pasapalabra HTML</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    
+</head>
+
+<body onload="initiation()" >
+    
+
+    <div id="caixaPrincipal">
+        <h3>BIENVENIDOS AL JUEGO DE PASAPALABRA DE SKYLABCODERS ACADEMY</h3>
+
+        <p>Basado en el exitoso concurso de televison de pasapalabra de Telecinco, las normas son muy sencillas:</p>
+        <p> Se mostraran unas definiciones por pantalla y el usuario deberá responder la palabra a la que corresponden. El usuario tiene la opcion de decir Pasapalabra y dejar la definicion para mas adelante</p>
+        <p>El programa es sensible a la acentuacion, así que se deberá introducir sin tílde. Es posible utilizar la tecla ENTER para enviar la palabra y la SPACE para hacer pasapalabra </p>
+        
+    </div>
+
+    <div id="ContainerCircle">
+        <ul id="circle" >
+            <li id="letterA" class="circle"><span>A</span></li>
+            <li id="letterB" class="circle"><span>B</span></li>
+            <li id="letterC" class="circle"><span>C</span></li>
+            <li id="letterD" class="circle"><span>D</span></li>
+            <li id="letterE" class="circle"><span>E</span></li>
+            <li id="letterF" class="circle"><span>F</span></li>
+            <li id="letterG" class="circle"><span>G</span></li>
+            <li id="letterH" class="circle"><span>H</span></li>
+            <li id="letterI" class="circle"><span>I</span></li>
+            <li id="letterJ" class="circle"><span>J</span></li>
+            <li id="letterL" class="circle"><span>L</span></li>
+            <li id="letterM" class="circle"><span>M</span></li>
+            <li id="letterN" class="circle"><span>N</span></li>
+            <li id="letterÑ" class="circle"><span>Ñ</span></li>
+            <li id="letterO" class="circle"><span>O</span></li>
+            <li id="letterP" class="circle"><span>P</span></li>
+            <li id="letterQ" class="circle"><span>Q</span></li>
+            <li id="letterR" class="circle"><span>R</span></li>
+            <li id="letterS" class="circle"><span>S</span></li>
+            <li id="letterT" class="circle"><span>T</span></li>
+            <li id="letterU" class="circle"><span>U</span></li>
+            <li id="letterV" class="circle"><span>V</span></li>
+            <li id="letterX" class="circle"><span>X</span></li>
+            <li id="letterY" class="circle"><span>Y</span></li>
+            <li id="letterZ" class="circle"><span>Z</span></li>
+        </ul>
+        <DIV>
+            <h2>PASAPALABRA</h1>
+        </DIV>
+    </div>
+
+    <div id="Counter" class="circle">
+        <span id="counterSpan">150</span>
+    </div>
+
+    <div id="Answares" >
+        <span id="numAnsware">25</span>
+    </div>
+
+    <div id="idPlay">
+       <button  id="btnPlay" class="butPlay">► jugar</button>
+    </div>
+
+   
+
+    <div id="definiciones">
+        <p id="textoDefinicion"></p>
+    </div>
+
+    <div id="funciones">
+        <input type="text" id="word" value="Escribe tu respuesta"  maxlength="15" size="12" placeholder="Lower case, all one word">
+        <button id="OK">OK</button>
+        <button id="pasapalabra">pasapalabra</button>
+        <button id="stop">STOP</button>
+    </div>
+    <script  src="PASAPALABRAjshtml.js"></script>
+</body>

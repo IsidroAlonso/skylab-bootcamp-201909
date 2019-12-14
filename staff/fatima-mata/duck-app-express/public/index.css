@@ -1,0 +1,339 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #2e7f4d;
+}
+
+.view {
+  height: 100%;
+  padding: 3vw;
+  text-align: center;
+}
+
+body {
+  font-family: Tahoma;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: body __price;
+  color: #5bdf94;
+  margin-bottom: 20%;
+}
+
+li {
+  list-style: none;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+}
+
+.feedback {
+  border: 0.3rem solid #5bdf94;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #2e7f4d;
+}
+.feedback__icon {
+  font-size: 1.5rem;
+}
+.feedback__message {
+  display: inline;
+  color: #5bdf94;
+  font-size: 1.5rem;
+  font-family: Tahoma;
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2e7f4d;
+  border: 0.3rem solid #5bdf94;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  min-height: 100vh;
+  font-family: Tahoma;
+}
+.landing__title {
+  color: #5bdf94;
+  font-size: 4rem;
+  margin: 0.5rem auto 0.5rem auto;
+  margin-top: 7rem;
+}
+.landing__options {
+  color: #5bdf94;
+  font-size: 1.5rem;
+  margin: 0.5rem auto 0.5rem auto;
+  margin-top: 7rem;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2e7f4d;
+  border: 0.3rem solid #5bdf94;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  min-height: 100vh;
+  font-family: Tahoma;
+  font-size: 1.3rem;
+}
+.register__title {
+  color: #5bdf94;
+  font-size: 4rem;
+  margin: 0.5rem auto 0.5rem auto;
+  margin-top: 7rem;
+}
+.register__field {
+  background-color: #5bdf94;
+  color: black;
+  border: 0.3rem solid black;
+  font-size: 1.5rem;
+  margin: 0.5rem auto 0.5rem auto;
+  margin-top: 7rem;
+}
+.register__submit {
+  background-color: #5bdf94;
+  color: #2e7f4d;
+  border: 0.3rem solid black;
+  font-size: 1.3rem;
+  margin-top: 5rem;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2e7f4d;
+  border: 0.3rem solid #5bdf94;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  min-height: 100vh;
+  font-family: Tahoma;
+  font-size: 1.5rem;
+}
+.login__form {
+  background-color: #2e7f4d;
+}
+.login__title {
+  color: #5bdf94;
+  font-size: 4rem;
+  margin: 0.5rem auto 0.5rem auto;
+  margin-top: 7rem;
+}
+.login__input {
+  background-color: #5bdf94;
+  color: black;
+  border: 0.3rem solid black;
+  font-size: 1.5rem;
+  margin: 0.5rem auto 0.5rem auto;
+  margin-top: 7rem;
+}
+.login__button {
+  background-color: #5bdf94;
+  color: #2e7f4d;
+  border: 0.3rem solid black;
+  font-size: 1.3rem;
+  margin-top: 5rem;
+}
+
+.search {
+  display: flex;
+  height: 10vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+.search__title {
+  color: #5bdf94;
+  font-size: 4rem;
+  margin: 0.5rem auto 0.5rem auto;
+}
+.search__form {
+  display: flex;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+.search__input {
+  background: #5bdf94;
+  border: 2px solid black;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+.search__button {
+  background: #5bdf94;
+  border: 2px solid black;
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+.search__logout {
+  background: #5bdf94;
+  border: 2px solid black;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+.item-list {
+  display: flex;
+  padding: 0;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .items {
+    display: flex;
+    justify-content: center;
+  }
+
+  .item-list {
+    flex-flow: row wrap;
+    justify-content: space-around;
+    max-width: 90%;
+  }
+}
+@media (min-width: 1024px) {
+  .item-list {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+.item-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.item-list__li {
+  list-style: none;
+  width: 40%;
+  color: #5bdf94;
+}
+.item-list__item {
+  display: flex;
+  border-radius: 20px;
+}
+.item-list__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3%;
+  text-decoration: none;
+}
+.item-list__title {
+  background-color: #2e7f4d;
+  color: #5bdf94;
+  border: 2px solid #5bdf94;
+  border-radius: 0.9em;
+  font-size: 1.2em;
+  padding: 0 2%;
+}
+.item-list__image {
+  width: 60%;
+  border-radius: 60px;
+  margin-top: 2rem;
+}
+.item-list__price {
+  color: #5bdf94;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+  align-self: center;
+  font-size: 1.2em;
+}
+.item-list__fav {
+  width: 10%;
+  margin-top: 0.5rem;
+}
+.item-list__buttonfav {
+  border: none;
+}
+
+.detail-list {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 3%;
+  width: 50%;
+}
+.detail-list__detail {
+  display: flex;
+  border-radius: 20px;
+  margin-top: 2rem;
+}
+.detail-list__header {
+  background-color: #2e7f4d;
+  color: #5bdf94;
+  border-radius: 0.9em;
+  font-size: 2.5rem;
+  padding: 0 2%;
+  margin-top: 2rem;
+}
+.detail-list__title {
+  background-color: #2e7f4d;
+  color: #5bdf94;
+  border-radius: 0.9em;
+  font-size: 1.5em;
+  padding: 0 2%;
+  margin-top: 2rem;
+}
+.detail-list__image {
+  width: 40%;
+  border-radius: 60px;
+  margin-top: 2rem;
+}
+.detail-list__description {
+  padding: 0 2%;
+  margin-top: 2rem;
+}
+.detail-list__store {
+  background: #5bdf94;
+  border: 2px solid black;
+  font-size: 1.2em;
+  font-weight: bold;
+  align-self: center;
+  margin-top: 2rem;
+  color: #2e7f4d;
+}
+.detail-list__price {
+  color: #5bdf94;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+  align-self: center;
+  font-size: 1.2em;
+  margin-top: 2rem;
+}
+.detail-list__button {
+  background: #5bdf94;
+  border: 2px solid black;
+  font-size: 1.2em;
+  font-weight: bold;
+  align-self: center;
+  margin-top: 2rem;
+  color: #2e7f4d;
+}
+.detail-list__fav {
+  width: 10%;
+  margin-top: 0.5rem;
+  margin-top: 2rem;
+}
+.detail-list__buttonfav {
+  border: none;
+  margin-top: 2rem;
+}
+
+/*# sourceMappingURL=index.css.map */

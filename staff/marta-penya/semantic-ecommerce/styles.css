@@ -1,0 +1,333 @@
+
+body{
+    display:flex;
+    width: 100%;
+    flex-direction: column;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-color: #fadffa
+}
+
+/* --------------- header style --------------- */
+
+.header{
+    display: flex;
+    background-color: rgb(243, 154, 154);
+}
+
+
+
+
+.menu{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    color: white;  
+
+}
+
+.menu__list{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    color: white;
+    list-style: none;
+    font-size: 30px;
+    
+
+}
+
+.menu__item a{
+    text-decoration:none;
+    color: white;
+    display: block;
+    font-weight: bold;
+    -webkit-text-stroke: .5px black;
+    
+  
+    
+}
+
+/* --------------------- main style ------------------ */
+
+.section{
+
+}
+
+.sales{
+    
+}
+
+.sales__container{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.banner{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 131, 109);
+    
+}
+
+.banner img{
+    border-radius: 15px;
+    width: 50%;
+}
+
+.sales-items{
+    padding-top: 5%;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.sales__item{
+    font-size: 20px;
+
+}
+
+
+.product-container{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 2%;
+    
+}
+.product{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+.product img{
+    width: 40%;
+    padding-bottom: 1%;
+}
+
+button{
+    border: 4px solid rgb(243, 154, 154);    
+    background:rgb(255, 131, 109);
+    color: white;
+    border-radius: 25px;
+    height: 75px;
+    width: 150px;
+    font-size: 20px; 
+    text-align: center;
+    line-height: 3em;
+    
+}
+
+button:active{
+    transform: scale(.9)
+}
+
+/* product */
+
+.like{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.product-container1{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 4%;
+    
+}
+
+.main-product{
+    display: flex;    
+    padding-top: 2%;
+    width: 40%;
+    
+}
+
+.main-product img{
+    border-radius: 25px;
+}
+
+.gallery-items{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.main-product ul li{
+    list-style: none;
+    
+}
+
+.product-aside{
+    display: flex;    
+    width: 30%;
+    justify-content: center;
+    padding-top: 5%;       
+}
+
+.size-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 30px;
+    
+}
+
+.size-container label{
+    width: 20%;
+    font-weight: bold;
+}
+
+.size{
+    width: 20%;
+    font-size: 20px;
+}
+
+.button-cart{
+    display: flex;
+    height: 25%;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+
+.product-description{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+    padding-bottom: 5%;
+}
+
+/* results */
+
+.types{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.type-title{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+}
+.type-description{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin-left: 3rem;
+}
+
+.type-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+/* pay - cart */
+
+
+
+.pay-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    font-size: 30px;
+    height: 60%;
+
+}
+.pay-container label{
+    width: 40%;
+}
+.pay-container select{
+    width: 40%;
+    border-radius: 15px;
+}
+
+/* orders */
+.orders{
+    font-size: 3rem;
+}
+.orders-list{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.orders-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 4%;
+    
+}
+
+.orders-container img{
+    width: 40%;
+    border-radius: 15px;
+}
+/* --------------footer style --------------*/
+
+footer{
+    display:flex;
+    justify-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgb(243, 154, 154);
+}
+
+.social-media{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    justify-content: space-evenly;
+    
+}
+
+.social{
+    display: flex;
+
+}
+
+.social-media a{
+    text-decoration:none;
+    color: white;
+    display: block;
+    font-weight: bold;
+}
+
+
+.footer__list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    color: white;
+    list-style: none;
+}
+
+.footer__item a{
+    text-decoration:none;
+    color: white;
+    display: block;
+    font-weight: bold;
+}
+
+.copyright{
+    display: flex;
+    align-self: center;
+    color: white;
+}
+

@@ -1,0 +1,17 @@
+.details
+    display: grid
+    grid-template-areas: "title" "img" "description" "price" "back"
+    &__title
+        grid-area: title
+    &__img
+        grid-area: img
+    &__description
+        grid-area: description
+    .go-home
+        grid-area: back
+    &__price
+        grid-area: price
+        &-tag
+            background-color:#ffff71
+            padding: .5rem
+            border-radius: 0.4rem

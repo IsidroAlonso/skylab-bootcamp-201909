@@ -1,0 +1,14 @@
+extends ../view/index 
+
+include ../feedback/index
+
+block body
+    section.view.login
+            form.login__form(method="post" action=path)
+                h1.login__title <h1 class="login__title">⭐️🐥⭐️DUCK APP⭐️🐥⭐️</h1>
+                h1.login__title <h1 class="login__title">LOGIN</h1>
+                input.login__input(type="text" name="email" placeholder="Email" required="")
+                input.login__input(type="password" name="password" placeholder="Password" required="")
+                button.login__button  ➡️
+                if error
+                    +feedbacK(error)

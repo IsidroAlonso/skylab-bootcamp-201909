@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pasapalabra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>BIENVENIDO AL JUEGO DE PASAPALABRA DE SKYLAB CODERS</h1>
+
+    <h4>A continuación se explican las reglas del juego:</h4>
+    <ol type="1">
+       <li>Obtendrá un punto por cada letra acertada</li>
+       <li>Solamente hay una respuesta correcta y tendrá que ser exactamente esa </li>
+       <li>Puede pasar el turno pulsando 'PASAPALABRA'</li>
+       <li>Puede finalizar pulsando 'END', pero así no puntuará para el ránking</li>
+       <li>Tendrá un límite de 150 segundos para responder el máximo de letras</li>
+       <li>SUERTE AMIGO Y PÉTELO!</li>
+    </ol>
+
+    <br>
+    <div class="ranking">
+      <p id="rank" style="margin-left:10px;"></p>
+    </div>
+
+    <div class="contador">
+      <p></p>     
+    </div>
+ 
+
+    <div style="margin-left:150px;">
+      <p id ="0" class="letras">A</p>
+      <p id ="1" class="letras">B</p>
+      <p id ="2" class="letras">C</p>
+      <p id ="3" class="letras">D</p>
+      <p id ="4" class="letras">E</p>
+      <p id ="5" class="letras">F</p>
+      <p id ="6" class="letras">G</p>
+      <p id ="7" class="letras">H</p>
+      <p id ="8" class="letras">I<Fp>
+      <p id ="9" class="letras">J</p>
+      <p id ="10" class="letras">K</p>
+      <p id ="11" class="letras">L</p>     
+      <p id ="12" class="letras">M</p>
+    
+    </div>
+    <br><br><br><br><br><br>
+    <div style="margin-left:330px;">
+      <p id ="13" class="letras">N</p>
+      <p id ="14" class="letras">Ñ</p>
+      <p id ="15" class="letras">O</p>
+      <p id ="16" class="letras">P</p>
+      <p id ="17" class="letras">Q</p>
+      <p id ="18" class="letras">R</p>
+      <p id ="19" class="letras">S</p>
+      <p id ="20" class="letras">T</p>
+      <p id ="21" class="letras">U</p>
+      <p id ="22" class="letras">V</p>
+      <p id ="23" class="letras">W</p>
+      <p id ="24" class="letras">X</p>
+      <p id ="25" class="letras">Y</p>
+      <p id ="26" class="letras">Z</p>  
+    </div>    
+ 
+    <div>
+      <p id="preguntas" class="pregunta"></p>
+    </div>
+
+    <div class="respuesta">
+        Respuesta: <input id="frm1" type="text" value=""><br>
+       <button class="submit"  type="button" onclick="submit()">OK</button>  
+       <button class="pasa"  type="button" onclick="pasa()">Pasalacabra</button> 
+       <button class="stop"  type="button" onclick="stop()">Stop</button> 
+    </div>
+
+
+    <script src="pasapalabra.js"></script>
+
+
+</body>
+</html>

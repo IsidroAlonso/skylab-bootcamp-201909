@@ -1,4 +1,4 @@
-describe('push', function () {
+describe ('push', function () {
     it('should push a single item', function () {
         var array = ['a', 'b', 'c'];
 

@@ -10,3 +10,4 @@
 
 [Misc](https://drive.google.com/drive/folders/1Zk4SndzvRQz26QI8yLLlROZ4xaeFMCA7?usp=sharing)
 
+![staff](stuff/misc/staff-with-luka.jpg)

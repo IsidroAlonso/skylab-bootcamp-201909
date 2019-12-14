@@ -1,0 +1,52 @@
+.html{
+    font-family: calibry;
+}
+.ventanaresultado{
+    background-color: black;
+    width: 348px;
+    height:150px;
+    border: 5px black solid;
+    text-align: right;
+    color: white;
+    padding-top: 10px;
+    padding-right: 5px;
+    font-size: 50px;
+	overflow:auto;
+}
+.botonescalculadora{
+    margin: 0px;
+    padding: 0px;
+    height:87px;
+}
+.operador {
+    width: 88px;
+    background-Color: orange;
+    color: white;  
+    font-size: 30px;
+    border: 1px black solid;
+}
+.normal {
+    width: 88px;
+    background-color: rgb(208, 198, 198);
+    color: grey solid;
+    font-size: 30px;
+    border: 1px black solid;
+    }
+.grande {
+     width: 180px;
+     background-color: rgb(208, 198, 198);
+     color: grey solid;
+     font-size: 30px;
+     border: 1px black solid;
+    }
+ .simbolo {
+    width: 88px;
+    background-color: rgb(208, 198, 198);
+    color: grey solid;
+    font-size: 27px;
+    border: 1px black solid;
+    }
+
+
+
+

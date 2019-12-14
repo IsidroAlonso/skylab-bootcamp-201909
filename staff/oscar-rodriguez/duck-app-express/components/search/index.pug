@@ -1,0 +1,20 @@
+extends ../view/index
+
+include ../feedback/index
+include ../results/index
+
+block body
+    section.view.search
+        h1.search__title Search
+        a(href='/userpage')
+            h2.search__user= name
+        form(method='post' action= logout)
+            button.search__logout Logout
+        form.search__form(method='GET' action= path)
+            span.search__icon 🐣
+            input.search__criteria(type='text' name='query' placeholder='criteria' value= query || '')
+            button.search__submit 🔍
+        if error
+            +feedback(error)
+        if results
+            +results(results, favPath, detailPath)

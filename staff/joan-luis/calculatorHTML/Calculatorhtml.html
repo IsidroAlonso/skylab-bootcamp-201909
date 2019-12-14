@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Calculator HTML</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css"> 
+</head>
+
+<body onload="init()">
+    <h1>Ejercicio calculadora HTML</h1>
+    <table class="calculadora">
+       <tr>
+           <td colspan="4"><span id= "resultado"></span></td>
+       </tr> 
+       <tr>
+           <td colspan="2"> <button id="clear">AC</button></td>
+           <td> <button id="recoil"><img src="iconos/arrowreload_flecha_1318.ico"></button></td>
+           <td> <button id="division"> <img src="iconos/divisionsign_81003.ico"></button></td>
+       </tr>
+       <tr>
+            <td> <button id="seven">7</button></td>
+            <td><button id="eigth">8</button></td>
+            <td><button id="nine">9</button></td>
+            <td> <button id="multiply">X</button></td>
+        </tr>
+        <tr>
+            <td> <button id="four">4</button></td>
+            <td> <button id="five">5</button></td>
+            <td> <button id="six">6</button></td>
+            <td> <button id="subtract">-</button></td>
+        </tr>
+        <tr>
+            <td> <button id="one">1</button></td>
+            <td> <button id="two">2</button></td>
+            <td> <button id="three">3</button></td>
+            <td> <button id="sum">+</button></td>
+        </tr>
+        <tr>
+            <td colspan="2"> <button id="zero">0</button></td>
+            <td> <button id="coma">,</button></td>
+            <td> <button id="same">=</button></td>
+        </tr>
+ 
+    </table>
+<script src="funcionCalculadora.js"></script>
+</body>
+
+</html>

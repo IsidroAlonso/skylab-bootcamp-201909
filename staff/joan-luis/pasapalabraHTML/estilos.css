@@ -1,0 +1,325 @@
+body{
+    background-color: #0e66ca;
+}
+
+#miVideo{
+    opacity: 0.6;
+    top: 50px;
+    width: 1400px;
+    height: 1400px
+}
+
+#caixaPrincipal{
+    position: absolute;
+    margin: 75px;
+    width: 500px;
+    top:100px;
+    left: 800px;
+    float: right;
+    color: white;
+}
+
+#circle{
+    list-style: none;
+}
+
+#LetterA{
+    position: absolute;
+    top: 50px;
+    left: 400px;
+}
+
+#LetterB{
+    position: absolute;
+    top: 58px;
+    left: 462px;
+}
+
+#LetterC{
+    position: absolute;
+    top: 81px;
+    left: 520px;
+}
+
+#LetterD{
+    position: absolute;
+    top: 117px;
+    left: 570px;
+}
+
+#LetterE{
+    position: absolute;
+    top: 167px;
+    left: 611px;
+}
+
+#LetterF{
+    position: absolute;
+    top: 223px;
+    left: 638px;
+}
+
+#LetterG{
+    position: absolute;
+    top: 282px;
+    left: 649px;
+}
+
+#LetterH{
+    position: absolute;
+    top: 343px;
+    left: 646px;
+}
+
+#LetterI{
+    position: absolute;
+    top: 402px;
+    left: 628px;
+}
+
+#LetterJ{
+    position: absolute;
+    top: 453px;
+    left: 597px;
+}
+
+#LetterL{
+    position: absolute;
+    top: 497px;
+    left: 554px;
+}
+
+#LetterM{
+    position: absolute;
+    top: 528px;
+    left: 502px;
+}
+
+#LetterN{
+    position: absolute;
+    top: 546px;
+    left: 444px;
+}
+
+#LetterÑ{
+    position: absolute;
+    top: 549px;
+    left: 382px;
+}
+
+#LetterO{
+    position: absolute;
+    top: 538px;
+    left: 323px;
+}
+
+#LetterP{
+    position: absolute;
+    top: 512px;
+    left: 268px;
+}
+
+#LetterQ{
+    position: absolute;
+    top: 474px;
+    left: 220px;
+}
+
+#LetterR{
+    position: absolute;
+    top: 421px;
+    left: 182px;
+}
+
+#LetterS{
+    position: absolute;
+    top: 360px;
+    left: 157px; 
+}
+
+#LetterT{
+    position: absolute;
+    top: 300px;
+    left: 150px; 
+}
+
+#LetterU{
+    position: absolute;
+    top: 239px;
+    left: 157px; 
+}
+
+#LetterV{
+    position: absolute;
+    top: 180px;
+    left: 180px; 
+}
+
+#LetterX{
+    position: absolute;
+    top: 129px;
+    left: 217px; 
+}
+
+#LetterY{
+    position: absolute;
+    top: 85px;
+    left: 270px; 
+}
+
+#LetterZ{
+    position: absolute;
+    top: 59px;
+    left: 329px; 
+}
+
+h2{
+    position: absolute;
+    top: 290px;
+    left: 315px;
+    color: white;
+    font-size: 30px
+}
+
+
+.circle {
+    width: 45px;
+    height: 45px;
+    top: 10px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #083588;
+    border-style: solid;    
+    border-color: white;
+    text-align: center;
+}
+
+.circle>span {
+    display:inline-block;
+    vertical-align:middle;
+    line-height:normal;
+    padding-top: 7px;
+    color: white;
+    font-size: 20px;
+}
+
+#Counter{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top:600px;
+    left: 100px;
+}
+
+#counterSpan{
+    display:inline-block;
+    vertical-align:middle;
+    line-height:normal;
+    padding-top: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+#answares{
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    top: 675px;
+    left: 100px;
+    background: #083588;
+    border-style: solid;    
+    border-color: white;
+    text-align: center;
+    display:inline-block;
+    vertical-align:middle;
+    line-height:normal;
+    padding-top: 5px;
+    color: white;
+    font-size: 20px;
+}
+
+#idPlay{
+    position: absolute;
+    margin: 75px;
+    width: 165px;
+    height: 80px;
+    top: 400px;
+    left: 800px;
+    float: right;
+    background-color: #0c7feb;
+}
+
+.butPlay{
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    background-color: #1c37b3; 
+    border: white;
+    border-style: solid;
+    color: white;
+    padding: 13px 29px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#funciones{
+    position: absolute;
+    top: 700px;
+    left: 870px;
+    display: none;
+}
+
+#OK{
+    width: 40px;
+    height: 30px;
+    line-height: normal;
+    border-radius: 5px;
+    color: white;
+    background-color: #4444e9;
+    BORDER-TOP-WIDTH: 1px;
+}
+#word{
+    height: 30px;
+    width: 150px
+}
+
+#pasapalabra{
+    width: 100px;
+    height: 30px;
+    line-height: normal;
+    border-radius: 5px;
+    color: white;
+    background-color: #4444e9;
+}
+
+#stop{
+    width: 50px;
+    height: 30px;
+    line-height: normal;
+    border-radius: 5px;
+    color: white;
+    background-color:orangered;
+}
+
+#definiciones{
+    position: absolute;
+    top: 580px;
+    left: 870px;
+    width: 700px;
+    height: 100px;
+    background-color: rgb(38, 148, 238);
+    border-block-start-style: solid;
+    border-block-start-color: #1c37b3;
+    border-radius: 5px;
+    display: none;
+}
+
+#textodefinicion{
+    color:white;
+    font-size: 16px;
+    text-align: center;
+}
+

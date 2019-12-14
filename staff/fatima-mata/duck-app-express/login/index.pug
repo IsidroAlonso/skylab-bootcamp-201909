@@ -1,0 +1,13 @@
+extends ../views/index
+include ../feedback/index
+
+block body
+    section.view.login
+        form.login__form(method="POST" action="/login")
+            h1.login__title DuckIn
+            input.login__input(type="text" name="email" placeholder="Username")
+            input.login__input(type="password" name="password" placeholder="Password")
+            button.login__submit Entrar
+            a(class='btn__register' href=path) Create new account
+        if error
+            +feedback(error)

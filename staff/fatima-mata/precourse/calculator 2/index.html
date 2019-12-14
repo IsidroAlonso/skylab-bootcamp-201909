@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="index.css" type="text/css" rel="stylesheet">
+    <title>Calculator-2</title>
+</head>
+
+<body>
+    <div>
+        <textarea id="ventanaresultado" class="ventanaresultado"></textarea></div>
+    <div class="botonescalculadora">
+        <p>
+            <input type="button" class="grande" value="AC" onclick="borrarTodo()" />
+            <input type="button" class="simbolo" value="↺" onclick="retroceder()" />
+            <input type="button" class="operador" value="÷" onclick="operacion('division')" />
+        </p>
+        <p>
+            <input type="button" class="normal" value="7" onclick="introNumero('7')" />
+            <input type="button" class="normal" value="8" onclick="introNumero('8')" />
+            <input type="button" class="normal" value="9" onclick="introNumero('9')" />
+            <input type="button" class="operador" value="x" onclick="operacion('multiplicar')" />
+        </p>
+        <p>
+            <input type="button" class="normal" value="4" onclick="introNumero('4')" />
+            <input type="button" class="normal" value="5" onclick="introNumero('5')" />
+            <input type="button" class="normal" value="6" onclick="introNumero('6')" />
+            <input type="button" class="operador" value="-" onclick="operacion('restar')" />
+        </p>
+        <p>
+            <input type="button" class="normal" value="1" onclick="introNumero('1')" />
+            <input type="button" class="normal" value="2" onclick="introNumero('2')" />
+            <input type="button" class="normal" value="3" onclick="introNumero('3')" />
+            <input type="button" class="operador" value="+" onclick="operacion('sumar')" />
+        </p>
+        <p>
+            <input type="button" class="grande" value="0" onclick="introNumero('0')" />
+            <input type="button" class="normal" value="." onclick="coma()" />
+            <input type="button" class="operador" value="=" onclick="resultado()" />
+        </p>
+    </div>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>

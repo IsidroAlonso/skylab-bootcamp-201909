@@ -1,0 +1,222 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* mobile */
+
+/* header */
+
+.header {
+
+}
+
+.header__title {
+
+}
+
+.header__input {
+
+}
+
+.header__button {
+
+}
+
+.header__text {
+
+}
+
+.header__textlink {
+
+}
+
+.header__nav {
+
+}
+
+.header__list {
+
+}
+
+.header__listelement {
+
+}
+
+.header__listlink {
+
+}
+
+
+/* main content container */
+
+.content {
+
+}
+
+
+/* product list in main page */
+
+.productlist {
+
+}
+
+.productlist__maintitle {
+
+}
+
+.productlist__product {
+
+}
+
+.productlist__image {
+
+}
+
+.productlist__maintitle {
+
+}
+
+.productlist__product {
+
+}
+
+.productlist__image {
+
+}
+
+.productlist__title {
+
+}
+
+
+/* product content and details */
+
+.product
+
+.product__image
+
+.product__title
+
+.product__price
+
+.description
+
+.description__title
+
+.description__text
+
+.comments
+
+.comments__maintitle
+
+.comments__comment
+
+.comments__title
+
+.comments__score
+
+.comments__date
+
+.comments__text
+
+
+/* related products list */
+
+.related {
+
+}
+
+.related__maintitle {
+
+}
+
+.related__product {
+
+}
+
+.related__image {
+
+}
+
+.related__title {
+
+}
+
+
+/* footer */
+
+.footer {
+
+}
+
+.footer__nav {
+    
+}
+
+.footer__list {
+
+}
+
+.footer__listelement {
+
+}
+
+.footer__listlink {
+
+}
+
+.footer__moreinfo {
+
+}
+
+
+/* desktop & tablet */
+
+@media only screen and (min-width: 768px) { 
+
+}
+
+/* old version wo bem classes */
+
+/* body {
+    background-color: aquamarine;
+}
+
+figure {
+    width: 150px;
+    height: 100px;
+    border: solid 1px;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+ul > li {
+    list-style: none;
+}
+
+header {
+    background-color: white;
+}
+
+article {
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+article > section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+aside {
+    background-color: white;
+}
+
+footer {
+    background-color: white;
+} */
